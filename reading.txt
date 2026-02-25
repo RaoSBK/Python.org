@@ -1,0 +1,21 @@
+unit - 2
+Reference form the book called Python crash course by Eric Matthes   
+->in python we are able to create sam name variable 
+    but when we are calling then only it works no like we are calling after the declaration of bottom 
+    one and it shown the first one
+    -> the above line means you able to change the value of your variable at any time and its keep tracking your current value
+    -> it consist of letters, numbers & underscores (it starts with underscores but not with numbers)
+
+String 
+    These strings are called f- strings. The f is for format, because Python 
+    formats the string by replacing the name of any variable in braces with its 
+    value. The output from the previous code is:
+
+    \n \t : \n = this help us to print new line 
+            \t =  helps us to print the tab space before statement 
+            You can also combine tabs and newlines in a single string. The string 
+            "\n\t" tells Python to move to a new line, and start the next line with a tab. 
+            The following example shows how you can use a one- line string to generate 
+            four lines of output:
+
+            
