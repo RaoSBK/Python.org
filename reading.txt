@@ -18,4 +18,10 @@ String
             The following example shows how you can use a one- line string to generate 
             four lines of output:
 
-            
+        
+Unit - 3 Introducing list 
+    list contains many items in one variable 
+    you're able to axix the element with the help of index value and also you do the titling, upper & lower case operations too
+    pop method is used to print the last element of an list 
+    and if we want to pop any elements from an list then we have to give the index number
+
