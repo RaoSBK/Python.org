@@ -25,3 +25,12 @@ Unit - 3 Introducing list
     pop method is used to print the last element of an list 
     and if we want to pop any elements from an list then we have to give the index number
 
+    there are some functions in the list which you always have to revise like delete functions
+    pop funciton 
+    you can also sort the list in alphabets also by using sort() method 
+    you can also reverse sort a list by using sort(reverse = True) function 
+    there is another method to sort the mehtod by sorted(cars)
+
+    now you can also reverese list by using reverese() funciton 
+    by using len() funciton you are able to find the lenght of the list
+
