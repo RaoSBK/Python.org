@@ -34,3 +34,50 @@ Unit - 3 Introducing list
     now you can also reverese list by using reverese() funciton 
     by using len() funciton you are able to find the lenght of the list
 
+    now we are going to the discuss indexing part
+    print the last one by [-1] // this is the last items
+
+
+
+Unit 4
+    in the unit 4 we have to discuss about the list go deeper in this chapter and discuss how we are use in the real life
+    use for loop in the list 
+    for example you have a list and then you are going to print each element of the list then simply by using for loop
+    you are able to use for loop
+    syntax 
+    for item in items:  
+        print(item)
+    
+    if you want ot print some massage with item you are able to print it by using print function 
+
+    focused on the indentation (indentation means format of the code)
+    for good practice of the code you've tp maintain the proper format of the code technical terms is know as indentation 
+    if you are wroking as a professional in the industry then you need to write the code in the proper format so if you are not in the team your code is able to manage
+
+    and in the python if you are not writing your code in the proper indentation it will create errors 
+    if you missed the correct indentation then it will create the eroor like i explain below
+        "IndentationError: expected an indented block after 'for' statement on line 1(no of the line)"
+    
+    sometimes if you missed the indentation it will not show the error 
+    for example if you've to print the statements more than one and you forgot the indentation it will not show the error but it will not give the appropriate errors
+
+    if you forgot the colon accidentaly in the for loop statement then it will show syntax error
+
+
+    Now we start playing with the numbers in list 
+    so if you print the range of a number then the last number will not be concluded mean the last number is excludeed 
+    the above way for the for loop and it is not in the form of list it just show how to print the numbers in a range using for loop
+    now we are going to discuss how to print the number in the given range and it would be in list 
+    by using list function which is calling a range funciton where range will be decleared 
+    syntax 
+    numbers = list(range(1,6))
+    print(numbers)
+
+    by using range function we are able to skip the number 
+    by definging the third element in the range funciton basically we are telling the list to avoid the number while printing the list
+    example in the line of 61 & 62
+
+    in the line from 65-70
+    you are able to perform arithmetical operations like finding the squares of a given range of a number then you need to follow these ways to print it
+    
+

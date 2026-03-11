@@ -222,3 +222,14 @@ print(sorted(places))
 
 places.sort(reverse= True)
 print(places)
+
+
+motorcycles = ['honda', 'bmw', 'suzuki']
+# print(motorcycles[3])
+
+print(motorcycles[-1])
+
+
+motorcycles= []
+print(motorcycles[-1])
+
