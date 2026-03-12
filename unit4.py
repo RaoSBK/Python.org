@@ -146,3 +146,119 @@ print('\n')
 cubes = [value **3 for value in list(range(1,11))]
 print(cubes)
 
+
+players = ['charles', 'martina', 'michale', 'florence', 'eli']
+print(players[0:3])
+
+print(players[1:4])
+print(players[:4]) # starting position is not defined that means it will start with begining
+print(players[2:])
+
+print(players[-3:])
+
+print(f"Here is the first three players in my team")
+for player in players[:3]:
+    print(player.title())
+
+print(players[:])
+
+#copying list one into another
+
+my_food = ['pizza', 'flafel', 'Carrot cake']
+# frnd_food = my_food[:]
+
+my_food.append('cannoil')
+frnd_food = my_food[:]
+frnd_food.append('Ice cream')
+
+print(f"My favourite foods are: {my_food}")
+print(f"My friends favourite foods are {frnd_food}")
+
+
+# Q 4-10. Slices: Using one of the programs you wrote in this chapter, add several 
+# lines to the end of the program that do the following:
+# •	Print the message The first three items in the list are:. Then use a slice to 
+# print the first three items from that program’s list.
+# •	Print the message Three items from the middle of the list are:. Use a slice to 
+# print three items from the middle of the list.
+# •	Print the message The last three items in the list are:. Use a slice to print the 
+# last three items in the list.
+
+
+players = ['charles', 'martina', 'michale', 'florence', 'eli']
+
+print("Here are the first three item are in the list")
+print(players[:3])
+
+print("here are the items that  are present in the middle of the list")
+print(players[1:4])
+
+print("Here are the three items that are present in the last of my list")
+print(players[-3:])
+
+
+# Q 4-11. My Pizzas, Your Pizzas: Start with your program from Exercise 4-1 
+# (page 56). Make a copy of the list of pizzas, and call it friend_pizzas. 
+# Then, do the following:
+# •	Add a new pizza to the original list.
+# •	Add a different pizza to the list friend_pizzas.
+# •	Prove that you have two separate lists. Print the message My favorite 
+# pizzas are:, and then use a for loop to print the first list. Print the message 
+# My friend’s favorite pizzas are:, and then use a for loop to print the sec
+# ond list. Make sure each new pizza is stored in the appropriate list.
+
+pizzas = ['flamming chicks', 'chicken lugs', 'hawallan classic']
+frnd_pizzas = pizzas[:]
+
+pizzas.append('veg pizza')
+frnd_pizzas.append('cheese pizza')
+
+print(f"My favourite pizza are: ")
+for pizza in pizzas:
+    print(pizza)
+
+print("my friendds favourite list of pizzas are: ")
+for frnd_pizza in frnd_pizzas:
+    print(frnd_pizza)
+
+# Tupple
+dimensions = (200, 50)
+print(dimensions[0])
+print(dimensions[1])
+
+
+
+print(dimensions[0])
+
+
+my_t = (3,)
+print(my_t)
+
+dimensions = (200, 50)
+for dimension in dimensions:
+    print(dimension)
+
+
+# Q 4-13. Buffet: A buffet-style restaurant offers only five basic foods. Think of five 
+# simple foods, and store them in a tuple.
+# •	Use a for loop to print each food the restaurant offers.
+# •	Try to modify one of the items, and make sure that Python rejects the change.
+# •	The restaurant changes its menu, replacing two of the items with different 
+# foods. Add a line that rewrites the tuple, and then use a for loop to print 
+# each of the items on the revised menu.
+
+foods = ('pizza', 'burger', 'sandwich', 'Do-nut', 'briyani')
+
+for food in foods:
+    print(food)
+
+# foods[1] = ('hot cheese')
+
+
+foods = ('pizza', 'veg briyani', 'sandwich', 'mandi', 'briyani')
+
+for food in foods:
+    print(food)
+
+
+

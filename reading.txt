@@ -79,5 +79,36 @@ Unit 4
 
     in the line from 65-70
     you are able to perform arithmetical operations like finding the squares of a given range of a number then you need to follow these ways to print it
+
+    now doing the statics 
+    if you want to find the minimum, maximum or sum of a list or a given range then by simply calling the min , max , and sum function respectively you're able to print it 
+
+
+    list comprehensions
+    in th list comprehensions you able to do three thing in one line 
+    for eg creation, calculation and range in just one line
+
+
+    now working with the part of the list
+    by using this syntax line no 151 you're able to print the specific value from the particular indicies
+
+    [-3: ] the negative sign defines you to print the last three
+    in the for loop you're able to use the slices see the line no 160 & 161  
+
+    now we are discussing about copying one list to another 
+    by calling one list into another see the line no 168
+    now if you want to add something in the separate copying list then use append method see the line no 170 & 171
+
+
+    Tuples
+    Tuple is just looking like your list and the main two difference is lists are defined in square brackets and 
+    tuples are defines into paranthesis 
+    the second main difference is list is mutable and tuple is immutable 
+    for example a trianlge have a specific dimension and that are immutable 
+
+    if you want to decleare a tupple with a single element then you need to put a trailing comma after the element
+
+    you can loop the value of a tupple just as like as list
+    if you want to update the dimension value then you've to redifine it 
     
 
