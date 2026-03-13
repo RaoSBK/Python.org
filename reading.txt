@@ -110,5 +110,16 @@ Unit 4
 
     you can loop the value of a tupple just as like as list
     if you want to update the dimension value then you've to redifine it 
-    
+
+
+    explore PEP 8 for the syling the python code 
+
+
+
+Unit - 5
+
+    == comparision operator
+    in this chapter we'll discuss about the if statement means how we are going to make some dicisions
+        on the basis of some conditions 
+        
 
