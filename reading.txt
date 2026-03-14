@@ -121,5 +121,8 @@ Unit - 5
     == comparision operator
     in this chapter we'll discuss about the if statement means how we are going to make some dicisions
         on the basis of some conditions 
-        
+
+    you can check the eligibality accoding to the condition
+
+    there are many things in the conditional statements which is included in the file called unit5 you need to visit and practice all the problems
 
