@@ -126,3 +126,8 @@ Unit - 5
 
     there are many things in the conditional statements which is included in the file called unit5 you need to visit and practice all the problems
 
+Unit 6
+    in the dictnory we are going from a collection of information and if you want to axix them then you need to
+        call it by the key value and it will present 
+    
+
