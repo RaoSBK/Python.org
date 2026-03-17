@@ -179,6 +179,18 @@ for country in rivers.values():
     print(country.title())
 
 
+rivers = {'nile': 'egypt', 'amazon': 'brazil', 'yangtze': 'china'}
+
+for river, country in rivers.items():
+    print(f"{river.title()} runs through {country.title()}.")
+
+for river in rivers.keys():
+    print(river)
+
+
+for country in rivers.values():
+    print(country.title())
+
 
 # Q 6-6. Polling: Use the code in favorite_languages.py (page 97).
 # •	Make a list of people who should take the favorite languages poll. Include 
@@ -203,3 +215,202 @@ for person in people_to_poll:
         print(f"Thank you, {person.title()}, for responding to the poll!")
     else:
         print(f"{person.title()}, please take the poll and share your favorite language.")
+
+
+
+# Nesting
+
+alien_0 = {'color': 'green', 'point': 5}
+alien_1 = {'color': 'yellow', 'point': 10}
+alien_2 = {'color': 'red', 'point': 15}
+
+aliens = [alien_0, alien_1, alien_2]
+
+for alien in aliens:
+    print(alien)
+
+print("\n")
+# creating a range of aliens 
+
+aliens= []
+for alien_number in range(30):
+    new_alien= {'color': 'green', 'points': '5', 'speed': 'slow'}
+    aliens.append(new_alien)
+
+for alien in aliens[:3]:
+    if alien ['color'] == 'green':
+        alien ['color'] = 'yellow'
+        alien ['speed'] = 'medium'
+        alien['points'] = 10
+
+    elif alien ['color'] == 'yellow':
+        alien ['color'] = 'red'
+        alien['speed'] = 'fast'
+        alien['points'] = '15'
+
+
+for alien in aliens[:5]:
+    print(alien)
+print("...")
+
+print(f"Total number of aliens is : {len(aliens)}")
+
+# creating list in the dictionay
+
+pizza = {
+    'crust': 'thick',
+    'toppings': ['moshrooms', 'extra cheese']
+}
+
+print(f"You required a {pizza['crust']} crust pizza " "with the followings toppings:")
+
+for topping in pizza['toppings']:
+    print("\t" + topping)
+
+
+
+favorite_languages = {
+'jen': ['python', 'ruby'],
+'sarah': ['c'],
+    'edward': ['ruby', 'go'],
+    'phil': ['python', 'haskell'],
+    }
+
+for name, languages  in favorite_languages.items():
+    print(f"\n {name.title()}, favourite languages are: ")
+    for language in languages:
+        print(f"\t {language.title()}")
+
+
+# you can create many dictionary in one dictionary
+
+users = {
+    'suraj01': {'first_name': 'Suraj', 'last_name': 'Bhan', 'location': 'Hyderabad'},
+    'Shiavam01': {'first_name': 'Shivam', 'last_name': 'Chaurasiya', 'location': 'Hyderabad'},
+    'Goutam01': {'first_name': 'Goutam', 'last_name': 'bahi', 'location': 'Hyderabaad'},
+}
+
+for username, user_info in users.items():
+    print(f"\n User Name {username}")
+    full_name = f"{user_info['first_name']} {user_info['last_name']}"
+    location = user_info['location']
+
+
+    print(f"Full Name: {full_name}")
+    print(f"Location {location}")
+
+
+users = {
+    'suraj01': {'first_name': 'Suraj', 'last_name': 'Bhan', 'location': 'Hyderabad'},
+    'Shiavam01': {'first_name': 'Shivam', 'last_name': 'Chaurasiya', 'location': 'Hyderabad'},
+    'Goutam01': {'first_name': 'Goutam', 'last_name': 'bahi', 'location': 'Hyderabaad'},
+}
+
+for username, user_info in users.items():
+    print(f"User Name: {username}")
+
+    full_name = f"{user_info['first_name']} {user_info['last_name']}"
+    locations = user_info['location']
+
+    print(f"\t User Name {full_name}")
+    print(f'\t Location {locations}')
+
+
+# Q 6-7. People: Start with the program you wrote for Exercise 6-1 (page 99). 
+# Make two new dictionaries representing different people, and store all three 
+# dictionaries in a list called people. Loop through your list of people. As you 
+# loop through the list, print everything you know about each person.
+
+
+person1 = {'first_Name': 'Suraj_Bhan', 'last_name': 'Kumar', 'age': '18', 'City': 'Hyderabad',},
+person2 = {'first_Name': 'Shivam', 'last_name': 'Chaurasiya', 'age': '18', 'City': 'Hyderabad',},
+person3 = {'first_Name': 'Goutam', 'last_name': 'gambhir', 'age': '18', 'City': 'Hyderabad',}
+
+people = [person1, person2, person3]
+
+for person in people:
+    print(person)
+
+
+# Q 6-8. Pets: Make several dictionaries, where each dictionary represents a differ
+# ent pet. In each dictionary, include the kind of animal and the owner’s name. 
+# Store these dictionaries in a list called pets. Next, loop through your list and as 
+# you do, print everything you know about each pet.
+
+pet1 = {"animal": "dog", "owner": "Alice"}
+pet2 = {"animal": "cat", "owner": "Bob"}
+pet3 = {"animal": "parrot", "owner": "Charlie"}
+pet4 = {"animal": "rabbit", "owner": "Diana"}
+
+
+pets = [pet1, pet2, pet3, pet4]
+for pet in pets:
+    print(f"Pet name: {pet['animal']}")
+    print(f"Owner: {pet['owner']}")
+
+
+# Q 6-9. Favorite Places: Make a dictionary called favorite_places. Think of three 
+# names to use as keys in the dictionary, and store one to three favorite places 
+# for each person. To make this exercise a bit more interesting, ask some friends 
+# to name a few of their favorite places. Loop through the dictionary, and print 
+# each person’s name and their favorite places.
+
+favorite_places = {
+    "Alice": ["Paris", "New York", "Tokyo"],
+    "Bob": ["London", "Rome"],
+    "Charlie": ["Sydney", "San Francisco", "Berlin"]
+}
+
+for name, places in favorite_places.items():
+    print(f"{name} favourite places are: ")
+    for place in places:
+        print(f" {place}")
+
+
+# Q 6-10. Favorite Numbers: Modify your program from Exercise 6-2 (page 99) 
+# so each person can have more than one favorite number. Then print each per
+# son’s name along with their favorite numbers.
+
+favorite_numbers = {
+    "Alice": [3, 7, 21],
+    "Bob": [5, 10],
+    "Charlie": [2, 4, 6, 8]
+}
+
+for name, numbers in favorite_numbers.items():
+    print(f"{name} favourite numbers are: ")
+    for number in numbers:
+        print(f" {number}")
+
+
+# Q6-11. Cities: Make a dictionary called cities. Use the names of three cities as 
+# keys in your dictionary. Create a dictionary of information about each city and 
+# include the country that the city is in, its approximate population, and one fact 
+# about that city. The keys for each city’s dictionary should be something like 
+# country, population, and fact. Print the name of each city and all of the infor
+# mation you have stored about it.
+
+
+cities = {
+    "Paris": {
+        "country": "France",
+        "population": "2.1 million",
+        "fact": "Known as the City of Light and famous for the Eiffel Tower."
+    },
+    "Tokyo": {
+        "country": "Japan",
+        "population": "13.9 million",
+        "fact": "Home to the busiest train station in the world, Shinjuku."
+    },
+    "New York": {
+        "country": "USA",
+        "population": "8.6 million",
+        "fact": "Famous for Times Square and being a global financial hub."
+    }
+}
+
+for city, info in cities.items():
+    print(f"City: {city}")
+    print(f"Country: {country}")
+    print(f"population: {info['population']}")
+    print(f"fact: {info['fact']}")
