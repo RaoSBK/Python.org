@@ -132,3 +132,7 @@ Unit 6
     
     in the line 
 
+
+Unit 7
+    You can use the break statement in any of Python’s loops. For example, you could use 
+    break to quit a for loop that’s working through a list or a dictionary.
