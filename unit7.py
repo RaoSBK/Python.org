@@ -111,13 +111,41 @@ prompt += "\n What is your first name"
 
 #using braek statement 
 
-prompt = "Enter the name of the city you have visited:  "
-prompt += "Enter a 'quit' to end the program "
+# prompt = "Enter the name of the city you have visited:  "
+# prompt += "Enter a 'quit' to end the program "
 
-while True:
-    city = input(prompt)
+# while True:
+#     city = input(prompt)
 
-    if city == 'quit':
-        break
-    else:
-        print(f"I'd love to go to the {city.title()}")
+#     if city == 'quit':
+#         break
+#     else:
+#         print(f"I'd love to go to the {city.title()}")
+
+
+# Using continue in the loop
+
+current_number = 0
+while current_number < 10:
+    current_number += 1
+    if current_number % 2 == 0:
+        continue
+    print(current_number)
+
+
+x = 1
+while x <= 5:
+    print(x)
+    x +=1
+
+
+# Q 7-4. Pizza Toppings: Write a loop that prompts the user to enter a series of 
+# pizza toppings until they enter a 'quit' value. As they enter each topping, 
+# print a message saying you’ll add that topping to their pizza.
+
+prompt = "Enter the pizza toppins"
+prompt += "\nEnter 'quit' when you want to exit"
+
+while prompt != 'quit':
+    message = input(prompt)
+    print(message)
