@@ -1,3 +1,6 @@
+# This one contains too many comments line cuse here I'm practicing about user input
+
+
 # Q 6-12. Extensions: We’re now working with examples that are complex enough 
 # that they can be extended in any number of ways. Use one of the example pro
 # grams from this chapter, and extend it by adding new keys and values, chang
@@ -125,27 +128,115 @@ prompt += "\n What is your first name"
 
 # Using continue in the loop
 
-current_number = 0
-while current_number < 10:
-    current_number += 1
-    if current_number % 2 == 0:
-        continue
-    print(current_number)
+# current_number = 0
+# while current_number < 10:
+#     current_number += 1
+#     if current_number % 2 == 0:
+#         continue
+#     print(current_number)
 
 
-x = 1
-while x <= 5:
-    print(x)
-    x +=1
+# x = 1
+# while x <= 5:
+#     print(x)
+#     x +=1
 
 
 # Q 7-4. Pizza Toppings: Write a loop that prompts the user to enter a series of 
 # pizza toppings until they enter a 'quit' value. As they enter each topping, 
 # print a message saying you’ll add that topping to their pizza.
 
-prompt = "Enter the pizza toppins"
-prompt += "\nEnter 'quit' when you want to exit"
+# prompt = "Enter the pizza toppins"
+# prompt += "\nEnter 'quit' when you want to exit"
 
-while prompt != 'quit':
-    message = input(prompt)
-    print(message)
+# while prompt != 'quit':
+#     message = input(prompt)
+#     print(message)
+
+
+# 7-5. Movie Tickets: A movie theater charges different ticket prices depending on 
+# a person’s age. If a person is under the age of 3, the ticket is free; if they are 
+# between 3 and 12, the ticket is $10; and if they are over age 12, the ticket is 
+# $15. Write a loop in which you ask users their age, and then tell them the cost 
+# of their movie ticket.
+
+# while True:
+#     age_input = input("Enter your age (or 'quit' to stop)")
+
+#     if age_input.lower() == 'quit' :
+#         print("Good bye")
+
+#     try:
+#         age = int(age_input)
+#     except ValueError:
+#         print("Please enter a valid age")
+#         continue
+
+#     if age < 3:
+#         print("You ticket is free")
+
+#     elif 3 <= age <= 12:
+#         print("Your ticket cost is $10")
+#     else:
+#         print("your ticket cost is $15")
+
+
+
+# 7-6. Three Exits: Write different versions of either Exercise 7-4 or Exercise 7-5 
+# that do each of the following at least once:
+# •	Use a conditional test in the while statement to stop the loop.
+# •	Use an active variable to control how long the loop runs.
+# •	Use a break statement to exit the loop when the user enters a 'quit' value.
+
+
+#conditional statemnet
+
+# age = ""
+# while age != "quit":
+#     age = input("Enter your age (or 'quit' to stop): ")
+    
+#     if age == "quit":
+#         print("Goodbye!")
+#     else:
+#         age = int(age)
+#         if age < 3:
+#             print("Your ticket is free!")
+#         elif 3 <= age <= 12:
+#             print("Your ticket costs $10.")
+#         else:
+#             print("Your ticket costs $15.")
+
+
+#with variable
+# active = True
+
+# while active:
+#     age_input = input("Enter your age (or 'quit' to stop): ")
+    
+#     if age_input.lower() == "quit":
+#         active = False
+#     else:
+#         age = int(age_input)
+#         if age < 3:
+#             print("Your ticket is free!")
+#         elif 3 <= age <= 12:
+#             print("Your ticket costs $10.")
+#         else:
+#             print("Your ticket costs $15.")
+
+#using break statement
+
+while True:
+    age_input = input("Enter your age (or 'quit' to stop): ")
+    
+    if age_input.lower() == "quit":
+        print("Goodbye!")
+        break
+    
+    age = int(age_input)
+    if age < 3:
+        print("Your ticket is free!")
+    elif 3 <= age <= 12:
+        print("Your ticket costs $10.")
+    else:
+        print("Your ticket costs $15.")
