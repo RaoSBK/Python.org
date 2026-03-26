@@ -226,17 +226,83 @@ prompt += "\n What is your first name"
 
 #using break statement
 
-while True:
-    age_input = input("Enter your age (or 'quit' to stop): ")
+# while True:
+#     age_input = input("Enter your age (or 'quit' to stop): ")
     
-    if age_input.lower() == "quit":
-        print("Goodbye!")
-        break
+#     if age_input.lower() == "quit":
+#         print("Goodbye!")
+#         break
     
-    age = int(age_input)
-    if age < 3:
-        print("Your ticket is free!")
-    elif 3 <= age <= 12:
-        print("Your ticket costs $10.")
-    else:
-        print("Your ticket costs $15.")
+#     age = int(age_input)
+#     if age < 3:
+#         print("Your ticket is free!")
+#     elif 3 <= age <= 12:
+#         print("Your ticket costs $10.")
+#     else:
+#         print("Your ticket costs $15.")
+
+
+
+# 7-7. Infinity: Write a loop that never ends, and run it. (To end the loop, press 
+# ctrl-C or close the window displaying the output.
+
+# while True:
+#     print("This loop will run foreever!")           # this is the very danger code so after ruuning press 'ctrl+c'
+
+
+
+# Moving item from one list to another
+
+#starts with the user which needs to verify
+# and an empty list to hold confirmed users
+
+unconfirmed_users = ['alice', 'bob', 'brain']
+confirmed_users= []
+
+#verifying each users unitl they are they are no more unconfirmed users
+# move each verified user into the list of confirmed users
+
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop()
+
+    print(f"verifying user: {current_user.title()}")
+    confirmed_users.append(current_user)
+
+# Display all conifermed users
+print("The following users are verified")
+for confirmed_user in confirmed_users:
+    print(confirmed_user.title())
+
+
+# Removing all instance of specific value from a list
+pets = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
+print(pets)
+
+while 'cat' in pets:        # we are able to remove or loop on the particular element of a list
+    pets.remove('cat')   
+
+print(pets)
+
+
+# Filling a dictionary with user input
+responses = {}
+
+# Set a flag to indicate that polling is active.
+polling_active = True
+
+while polling_active:
+    #Prompt for the person's name and response.
+    name = input("\n What is your name")
+    response = input("Whcih mountain would you like to climb someday?")
+
+    # Store the response in the dictionary
+    responses[name] = response
+
+    #Find out if anyone else is going to take the poll.
+    repeat = input("Would you like to let another person respond? (yes/ no)")
+    if repeat == 'no':
+        polling_active = False
+    # Polling is complete. Show the results.
+print("\n--- Poll Results ---")
+for name, response in responses.items():
+    print(f"{name} would like to climb {response}.")
