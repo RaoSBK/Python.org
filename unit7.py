@@ -256,53 +256,129 @@ prompt += "\n What is your first name"
 #starts with the user which needs to verify
 # and an empty list to hold confirmed users
 
-unconfirmed_users = ['alice', 'bob', 'brain']
-confirmed_users= []
+# unconfirmed_users = ['alice', 'bob', 'brain']
+# confirmed_users= []
 
 #verifying each users unitl they are they are no more unconfirmed users
 # move each verified user into the list of confirmed users
 
-while unconfirmed_users:
-    current_user = unconfirmed_users.pop()
+# while unconfirmed_users:
+#     current_user = unconfirmed_users.pop()
 
-    print(f"verifying user: {current_user.title()}")
-    confirmed_users.append(current_user)
+#     print(f"verifying user: {current_user.title()}")
+#     confirmed_users.append(current_user)
 
-# Display all conifermed users
-print("The following users are verified")
-for confirmed_user in confirmed_users:
-    print(confirmed_user.title())
+# # Display all conifermed users
+# print("The following users are verified")
+# for confirmed_user in confirmed_users:
+#     print(confirmed_user.title())
 
 
 # Removing all instance of specific value from a list
-pets = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
-print(pets)
+# pets = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
+# print(pets)
 
-while 'cat' in pets:        # we are able to remove or loop on the particular element of a list
-    pets.remove('cat')   
+# while 'cat' in pets:        # we are able to remove or loop on the particular element of a list
+#     pets.remove('cat')   
 
-print(pets)
+# print(pets)
 
 
-# Filling a dictionary with user input
-responses = {}
+# # Filling a dictionary with user input
+# responses = {}
 
-# Set a flag to indicate that polling is active.
+# # Set a flag to indicate that polling is active.
+# polling_active = True
+
+# while polling_active:
+#     #Prompt for the person's name and response.
+#     name = input("\n What is your name")
+#     response = input("Whcih mountain would you like to climb someday?")
+
+#     # Store the response in the dictionary
+#     responses[name] = response
+
+#     #Find out if anyone else is going to take the poll.
+#     repeat = input("Would you like to let another person respond? (yes/ no)")
+#     if repeat == 'no':
+#         polling_active = False
+#     # Polling is complete. Show the results.
+# print("\n--- Poll Results ---")
+# for name, response in responses.items():
+#     print(f"{name} would like to climb {response}.")
+
+
+
+# 7-8. Deli: Make a list called sandwich_orders and fill it with the names of vari
+# ous sandwiches. Then make an empty list called finished_sandwiches. Loop 
+# through the list of sandwich orders and print a message for each order, such 
+# as I made your tuna sandwich. As each sandwich is made, move it to the list 
+# of finished sandwiches. After all the sandwiches have been made, print a 
+# message listing each sandwich that was made.
+
+
+sandwich_orders = ['tuna', 'pastrami', 'chicken', 'pastrami', 'veggie', 'pastrami', 'egg']
+finished_sandwiches = []
+
+
+while sandwich_orders:
+    current_sandwiches = sandwich_orders.pop()
+    print(f"This sandwich is made {current_sandwiches}")
+
+    finished_sandwiches.append(current_sandwiches)
+
+print(finished_sandwiches)
+
+
+# 7-9. No Pastrami: Using the list sandwich_orders from Exercise 7-8, make sure 
+# the sandwich 'pastrami' appears in the list at least three times. Add code 
+# near the beginning of your program to print a message saying the deli has 
+# run out of pastrami, and then use a while loop to remove all occurrences of 
+# 'pastrami' from sandwich_orders. Make sure no pastrami sandwiches end up 
+
+
+sandwich_orders = ['tuna', 'pastrami', 'chicken', 'pastrami', 'veggie', 'pastrami', 'egg']
+
+print("Sorry, the deli has run out of pastrami.")
+
+while 'pastrami' in sandwich_orders:
+    sandwich_orders.remove('pastrami')
+
+finished_sandwiches = []
+
+for order in sandwich_orders:
+    print(f"I made your {order} sandwich.")
+    finished_sandwiches.append(order)
+
+
+print("\nSandwiches prepared:")
+for sandwich in finished_sandwiches:
+    print(sandwich)
+
+
+# 7-10. Dream Vacation: Write a program that polls users about their dream vaca
+# tion. Write a prompt similar to If you could visit one place in the world, where 
+# would you go? Include a block of code that prints the results of the poll.
+
+
+
+responses = {}  
 polling_active = True
 
 while polling_active:
-    #Prompt for the person's name and response.
-    name = input("\n What is your name")
-    response = input("Whcih mountain would you like to climb someday?")
+    
+    name = input("\nWhat is your name? ")
+    vacation = input("If you could visit one place in the world, where would you go? ")
 
-    # Store the response in the dictionary
-    responses[name] = response
+   
+    responses[name] = vacation
 
-    #Find out if anyone else is going to take the poll.
-    repeat = input("Would you like to let another person respond? (yes/ no)")
-    if repeat == 'no':
+    
+    repeat = input("Would you like to let another person respond? (yes/no) ")
+    if repeat.lower() == 'no':
         polling_active = False
-    # Polling is complete. Show the results.
-print("\n--- Poll Results ---")
-for name, response in responses.items():
-    print(f"{name} would like to climb {response}.")
+
+
+print("\n--- Dream Vacation Poll Results ---")
+for name, vacation in responses.items():
+    print(f"{name} would like to visit {vacation}.")
