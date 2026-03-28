@@ -283,6 +283,174 @@ users = [
 
 
 -----------------------------------------
+CHAPTER 7 — User Input and while Loops
+-----------------------------------------
+
+📌 USER INPUT
+
+• input() function is used to take input from user
+
+    name = input("Enter your name: ")
+
+• Input is always stored as STRING by default
+
+Convert input:
+    age = int(input("Enter age: "))
+
+-----------------------------------------
+📌 WRITING CLEAR PROMPTS
+
+Good practice:
+    message = "Tell me something: "
+    user_input = input(message)
+
+-----------------------------------------
+📌 NUMERICAL INPUT
+
+• Convert string → integer using int()
+
+Example:
+    number = int(input("Enter number: "))
+
+-----------------------------------------
+📌 MODULO OPERATOR (%)
+
+• Gives remainder
+
+Example:
+    5 % 2 → 1
+
+Used for:
+- checking even/odd
+    if number % 2 == 0:
+        print("Even")
+
+-----------------------------------------
+📌 WHILE LOOP
+
+• Runs until condition becomes False
+
+Syntax:
+    while condition:
+        code
+
+Example:
+    i = 1
+    while i <= 5:
+        print(i)
+        i += 1
+
+-----------------------------------------
+📌 CONTROL LOOP USING USER INPUT
+
+Example:
+    message = ""
+    while message != "quit":
+        message = input("Enter: ")
+        print(message)
+
+-----------------------------------------
+📌 USING FLAG
+
+• Flag = variable to control loop
+
+Example:
+    active = True
+
+    while active:
+        message = input("Enter: ")
+        if message == "quit":
+            active = False
+
+-----------------------------------------
+📌 break STATEMENT
+
+• Exit loop immediately
+
+Example:
+    while True:
+        message = input("Enter: ")
+        if message == "quit":
+            break
+
+-----------------------------------------
+📌 continue STATEMENT
+
+• Skip current iteration
+
+Example:
+    for i in range(10):
+        if i % 2 == 0:
+            continue
+        print(i)
+
+-----------------------------------------
+📌 AVOID INFINITE LOOPS
+
+• Infinite loop runs forever
+
+Example (wrong):
+    while True:
+        print("Hello")
+
+• Always ensure loop has stopping condition
+
+-----------------------------------------
+📌 WHILE LOOP WITH LISTS
+
+Example:
+    users = ["a", "b", "c"]
+
+    while users:
+        user = users.pop()
+        print(user)
+
+-----------------------------------------
+📌 REMOVE ALL OCCURRENCES
+
+Example:
+    pets = ["dog", "cat", "dog"]
+
+    while "dog" in pets:
+        pets.remove("dog")
+
+-----------------------------------------
+📌 USING INPUT WITH DICTIONARY
+
+Example:
+    responses = {}
+
+    while True:
+        name = input("Name: ")
+        response = input("Response: ")
+
+        responses[name] = response
+
+        repeat = input("Continue? (yes/no): ")
+        if repeat == "no":
+            break
+
+-----------------------------------------
+📌 KEY TAKEAWAYS
+
+• input() → user input
+• int() → convert to number
+• while loop → repeat until condition false
+• break → exit loop
+• continue → skip iteration
+• flag → control loop
+• avoid infinite loops
+
+-----------------------------------------
+REVISION TIP
+
+Practice:
+✔ Input programs
+✔ Loop problems
+✔ Even/odd checks
+✔ Menu-driven programs
+
+-----------------------------------------
 REVISION RULE
 -----------------------------------------
 
