@@ -136,3 +136,11 @@ Unit 6
 Unit 7
     You can use the break statement in any of Python’s loops. For example, you could use 
     break to quit a for loop that’s working through a list or a dictionary.
+
+
+unit 8
+    functions
+    in the first funciton called greet_user() there is a linke in triple inverted comma that is called DockString
+    DockString describes what the function does, it generates documentaiton for the functions in your program
+
+    
