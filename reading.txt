@@ -143,4 +143,8 @@ unit 8
     in the first funciton called greet_user() there is a linke in triple inverted comma that is called DockString
     DockString describes what the function does, it generates documentaiton for the functions in your program
 
-    
+        keywords argument while we are calling a function and passing the argument to the funciton at that time we calling
+        the parameter name as it  is then we pass the value in, this help us to reduces the confusiion in the error
+
+    Default values :- it set the one argument as same for the funciton and one is change ( see in the line no 63-68)
+        
