@@ -262,26 +262,39 @@ print(album4)
 # that’s created. Be sure to include a quit value in the while loop.
 
 
-def make_album(artist, title, songs=None):
-    """Build a dictionary describing a music album."""
-    album = {"artist": artist, "title": title}
-    if songs:
-        album["songs"] = songs
-    return album
+# def make_album(artist, title, songs=None):
+#     """Build a dictionary describing a music album."""
+#     album = {"artist": artist, "title": title}
+#     if songs:
+#         album["songs"] = songs
+#     return album
 
-while True:
-    print("\nEnter album details (or type 'quit' to stop):")
-    artist = input("Artist name: ")
-    if artist.lower() == 'quit':
-        break
+# while True:
+#     print("\nEnter album details (or type 'quit' to stop):")
+#     artist = input("Artist name: ")
+#     if artist.lower() == 'quit':
+#         break
 
-    title = input("Album title: ")
-    if title.lower() == 'quit':
-        break
+#     title = input("Album title: ")
+#     if title.lower() == 'quit':
+#         break
 
-    songs = input("Number of songs (optional, press Enter to skip): ")
-    if songs.lower() == 'quit':
-        break
+#     songs = input("Number of songs (optional, press Enter to skip): ")
+#     if songs.lower() == 'quit':
+#         break
 
-    album = make_album(artist, title, int(songs) if songs else None)
-    print("Album dictionary created:", album)
+#     album = make_album(artist, title, int(songs) if songs else None)
+#     print("Album dictionary created:", album)
+
+
+#passing a list 
+
+def greet_users(names):
+    """print a greet every users in the list"""
+    for name in names:
+        msg = f"Hello, {name.title()}"
+        print(msg)
+
+usernames = ['suraj', 'shivam', 'ratan']
+greet_users(usernames)
+

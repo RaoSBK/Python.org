@@ -131,19 +131,84 @@ for name, marks in students.items():
 # Sum of numbers
 
 
-count = 0
-total_sum = 0
+# count = 0
+# total_sum = 0
+
+# while True:
+#     user_input = input("Enter a number (or type 'stop' to end): ")
+    
+#     if user_input.lower() == "stop":
+#         break 
+    
+#     number = int(user_input)
+    
+#     count += 1
+#     total_sum += number
+
+# print("Total numbers entered:", count)
+# print("Sum of numbers:", total_sum)
+
+
+
+# uestion 7 — Lists + Condition + Loop (Real Logic)
+
+# Write a program that:
+
+# Takes 5 numbers from the user and stores them in a list
+# After storing:
+# Print the largest number
+# Print the smallest number
+# Print how many numbers are even
+
+
+
+numbers = []
+for i in range(5):
+    num = int(input(f"Enter number {i+1}: "))
+    numbers.append(num)
+
+print("Largest number:", max(numbers))
+
+print("Smallest number:", min(numbers))
+
+even_count = 0
+for n in numbers:
+    if n % 2 == 0:
+        even_count += 1
+
+print("Count of even numbers:", even_count)
+
+
+
+# Question 8 — Dictionary + While Loop + Input (Mini System)
+
+# Write a program that:
+
+# Creates an empty dictionary
+# Asks user to enter:
+# Product name
+# Price
+# Store them in dictionary
+# Continue asking until user types "stop"
+# At the end:
+# Print all products
+# Print total cost of all products
+
+
+products = {}
 
 while True:
-    user_input = input("Enter a number (or type 'stop' to end): ")
+    product_name = input("Enter product name (or type 'stop' to finish): ")
     
-    if user_input.lower() == "stop":
-        break 
+    if product_name.lower() == "stop":
+        break
     
-    number = int(user_input)
-    
-    count += 1
-    total_sum += number
+    price = float(input(f"Enter price for {product_name}: "))
+    products[product_name] = price
 
-print("Total numbers entered:", count)
-print("Sum of numbers:", total_sum)
+print("\nProducts entered:")
+for name, price in products.items():
+    print(f"{name}: {price}")
+
+total_cost = sum(products.values())
+print("\nTotal cost of all products:", total_cost)
