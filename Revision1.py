@@ -162,21 +162,21 @@ for name, marks in students.items():
 
 
 
-numbers = []
-for i in range(5):
-    num = int(input(f"Enter number {i+1}: "))
-    numbers.append(num)
+# numbers = []
+# for i in range(5):
+#     num = int(input(f"Enter number {i+1}: "))
+#     numbers.append(num)
 
-print("Largest number:", max(numbers))
+# print("Largest number:", max(numbers))
 
-print("Smallest number:", min(numbers))
+# print("Smallest number:", min(numbers))
 
-even_count = 0
-for n in numbers:
-    if n % 2 == 0:
-        even_count += 1
+# even_count = 0
+# for n in numbers:
+#     if n % 2 == 0:
+#         even_count += 1
 
-print("Count of even numbers:", even_count)
+# print("Count of even numbers:", even_count)
 
 
 
@@ -195,20 +195,65 @@ print("Count of even numbers:", even_count)
 # Print total cost of all products
 
 
-products = {}
+# products = {}
 
-while True:
-    product_name = input("Enter product name (or type 'stop' to finish): ")
+# while True:
+#     product_name = input("Enter product name (or type 'stop' to finish): ")
     
-    if product_name.lower() == "stop":
-        break
+#     if product_name.lower() == "stop":
+#         break
     
-    price = float(input(f"Enter price for {product_name}: "))
-    products[product_name] = price
+#     price = float(input(f"Enter price for {product_name}: "))
+#     products[product_name] = price
 
-print("\nProducts entered:")
-for name, price in products.items():
-    print(f"{name}: {price}")
+# print("\nProducts entered:")
+# for name, price in products.items():
+#     print(f"{name}: {price}")
 
-total_cost = sum(products.values())
-print("\nTotal cost of all products:", total_cost)
+# total_cost = sum(products.values())
+# print("\nTotal cost of all products:", total_cost)
+
+
+#  Question 9 — String + Condition
+
+# Write a program that:
+
+# Takes a name as input
+# Checks:
+# If the name is in uppercase → print "Uppercase"
+# If lowercase → print "Lowercase"
+# Otherwise → print "Mixed case"
+
+
+# Program to check case of a name
+
+# # Take input
+# name = input("Enter a name: ")
+
+# if name == name.upper():
+#     print("Uppercase")
+# elif name == name.lower():
+#     print("Lowercase")
+# else:
+#     print("Mixed case")
+
+
+
+# Question 10 — While Loop + List + Removal
+
+# Write a program that:
+
+# Creates a list with duplicate values
+
+# items = ["pen", "book", "pen", "pencil", "pen"]
+# Removes all occurrences of "pen" using a while loop
+# Prints the final list
+
+
+
+items = ["pen", "book", "pen", "pencil", "pen"]
+
+while "pen" in items:
+    items.remove("pen")
+
+print("Final list:", items)
