@@ -257,3 +257,51 @@ while "pen" in items:
     items.remove("pen")
 
 print("Final list:", items)
+
+
+# Question 11 — Number Analysis (Logic + Loop)
+
+# Write a program that:
+
+# Takes a number n from the user
+# Prints all numbers from 1 to n
+# Also:
+# Count how many are even
+# Count how many are odd
+
+
+# n = int(input("Enter a number: "))
+
+# even_count = 0
+# odd_count = 0
+
+# for i in range(1, n + 1):
+#     print(i, end=" ") 
+#     if i % 2 == 0:
+#         even_count += 1
+#     else:
+#         odd_count += 1
+
+# print("\nTotal even numbers:", even_count)
+# print("Total odd numbers:", odd_count)
+
+
+
+
+# Question 12 — Dictionary + Condition (Mini Filtering System)
+
+# Write a program that:
+
+# Has a dictionary of products and prices:
+# products = {"pen": 10, "book": 50, "bag": 500, "pencil": 5}
+
+
+
+products = {"pen": 10, "book": 50, "bag": 500, "pencil": 5}
+
+limit = int(input("Enter a price limit: "))
+
+print(f"Products costing less than or equal to {limit}:")
+for item, price in products.items():
+    if price <= limit:
+        print(f"{item} - {price}")
