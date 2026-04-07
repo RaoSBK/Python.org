@@ -297,11 +297,77 @@ print("Final list:", items)
 
 
 
-products = {"pen": 10, "book": 50, "bag": 500, "pencil": 5}
+# products = {"pen": 10, "book": 50, "bag": 500, "pencil": 5}
 
-limit = int(input("Enter a price limit: "))
+# limit = int(input("Enter a price limit: "))
 
-print(f"Products costing less than or equal to {limit}:")
-for item, price in products.items():
-    if price <= limit:
-        print(f"{item} - {price}")
+# print(f"Products costing less than or equal to {limit}:")
+# for item, price in products.items():
+#     if price <= limit:
+#         print(f"{item} - {price}")
+
+
+
+
+# 🔹 Question 13 — Login System (While + Condition)
+
+# Write a program that:
+
+# Stores a correct username and password
+# Asks the user to enter username and password
+# Gives 3 attempts only
+# If correct → print "Login Successful"
+# If wrong after 3 attempts → print "Account Locked"
+
+
+#Ans:
+# correct_username = "admin"
+# correct_password = "12345"
+
+# attempts = 3
+
+# while attempts > 0:
+#     username = input("Enter username: ")
+#     password = input("Enter password: ")
+
+#     if username == correct_username and password == correct_password:
+#         print("Login Successful")
+#         break
+#     else:
+#         attempts -= 1
+#         print("Incorrect credentials. Attempts left:", attempts)
+
+# if attempts == 0:
+#     print("Account Locked")
+
+
+
+# Question 14 — Shopping Cart (List + Input + Loop)
+
+# Write a program that:
+
+# Keeps asking the user to enter item names
+# Stores items in a list
+# Stops when user types "done"
+# At the end:
+# Print all items
+# Print total number of items
+
+
+
+
+cart = []
+
+while True:
+    item = input("Enter item name (type 'done' to finish): ")
+
+    if item.lower() == "done":
+        break
+    else:
+        cart.append(item)
+
+print("\nItems in your cart:")
+for i in cart:
+    print("-", i)
+
+print("Total number of items:", len(cart))
