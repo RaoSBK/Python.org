@@ -356,18 +356,81 @@ print("Final list:", items)
 
 
 
-cart = []
+# cart = []
 
-while True:
-    item = input("Enter item name (type 'done' to finish): ")
+# while True:
+#     item = input("Enter item name (type 'done' to finish): ")
 
-    if item.lower() == "done":
-        break
+#     if item.lower() == "done":
+#         break
+#     else:
+#         cart.append(item)
+
+# print("\nItems in your cart:")
+# for i in cart:
+#     print("-", i)
+
+# print("Total number of items:", len(cart))
+
+
+
+# Question 15 — Number Guessing Game (While + Condition)
+
+# Write a program that:
+
+# Stores a secret number (e.g., 7)
+# Asks the user to guess the number
+# Keeps running until the user guesses correctly
+# After each wrong guess:
+# Print "Too high" or "Too low"
+
+
+
+
+
+# secret_number = 7  
+# guess = None      
+
+# while guess != secret_number:
+#     guess = int(input("Guess the number: "))  
+    
+#     if guess > secret_number:
+#         print("Too high")
+#     elif guess < secret_number:
+#         print("Too low")
+
+# print("Congratulations! You guessed it right.")
+
+
+
+
+# Question 16 — Frequency Counter (List + Dictionary)
+
+# Write a program that:
+
+# Takes 5 numbers from the user
+# Stores them in a list
+# Creates a dictionary to count how many times each number appears
+
+# 👉 Example:
+
+# Input: 1 2 2 3 1  
+# Output: {1: 2, 2: 2, 3: 1}
+
+
+
+
+
+numbers = []
+for i in range(5):
+    num = int(input(f"Enter number {i+1}: "))
+    numbers.append(num)
+
+frequency = {}
+for num in numbers:
+    if num in frequency:
+        frequency[num] += 1
     else:
-        cart.append(item)
+        frequency[num] = 1
 
-print("\nItems in your cart:")
-for i in cart:
-    print("-", i)
-
-print("Total number of items:", len(cart))
+print("Frequency count:", frequency)
