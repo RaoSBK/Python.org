@@ -421,16 +421,73 @@ print("Final list:", items)
 
 
 
-numbers = []
-for i in range(5):
+# numbers = []
+# for i in range(5):
+#     num = int(input(f"Enter number {i+1}: "))
+#     numbers.append(num)
+
+# frequency = {}
+# for num in numbers:
+#     if num in frequency:
+#         frequency[num] += 1
+#     else:
+#         frequency[num] = 1
+
+# print("Frequency count:", frequency)
+
+
+
+# Question 17 — Palindrome Checker (String + Loop)
+
+# Write a program that:
+
+# Takes a word from the user
+# Checks whether it is a palindrome (same forward and backward)
+# Print:
+# "Palindrome" or "Not Palindrome"
+
+
+#Ans: 
+
+# word = input("Enter a word: ")
+
+# is_palindrome = True
+
+# for i in range(len(word) // 2):
+#     if word[i] != word[len(word) - 1 - i]:
+#         is_palindrome = False
+#         break
+
+# if is_palindrome:
+#     print("Palindrome")
+# else:
+#     print("Not Palindrome")
+
+
+
+
+# Question 18 — Unique Elements (List + Logic)
+
+# Write a program that:
+
+# Takes 6 numbers from the user
+# Stores them in a list
+# Creates a new list containing only unique elements (no duplicates)
+# Print the new list
+
+
+
+
+numbers = []  # list to store user input
+
+for i in range(6):
     num = int(input(f"Enter number {i+1}: "))
     numbers.append(num)
 
-frequency = {}
-for num in numbers:
-    if num in frequency:
-        frequency[num] += 1
-    else:
-        frequency[num] = 1
+unique_list = []  # list to store unique elements
 
-print("Frequency count:", frequency)
+for n in numbers:
+    if n not in unique_list:
+        unique_list.append(n)
+
+print("Unique elements:", unique_list)
