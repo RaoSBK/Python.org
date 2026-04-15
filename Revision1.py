@@ -478,16 +478,83 @@ print("Final list:", items)
 
 
 
-numbers = []  # list to store user input
+# numbers = []  # list to store user input
 
-for i in range(6):
-    num = int(input(f"Enter number {i+1}: "))
-    numbers.append(num)
+# for i in range(6):
+#     num = int(input(f"Enter number {i+1}: "))
+#     numbers.append(num)
 
-unique_list = []  # list to store unique elements
+# unique_list = []  # list to store unique elements
 
-for n in numbers:
-    if n not in unique_list:
-        unique_list.append(n)
+# for n in numbers:
+#     if n not in unique_list:
+#         unique_list.append(n)
 
-print("Unique elements:", unique_list)
+# print("Unique elements:", unique_list)
+
+
+
+
+# Question 19 — Prime Number Check (Loop + Condition)
+
+# Write a program that:
+
+# Takes a number from the user
+# Checks whether it is a prime number
+# Print:
+# "Prime" or "Not Prime"
+
+
+
+
+# num = int(input("Enter a number: "))
+
+# if num <= 1:
+#     print("Not Prime")
+# else:
+#     is_prime = True
+#     for i in range(2, int(num**0.5) + 1): 
+#         if num % i == 0:
+#             is_prime = False
+#             break
+    
+#     if is_prime:
+#         print("Prime")
+#     else:
+#         print("Not Prime")
+
+
+
+# Question 20 — Menu-Driven Program (While + Input + Condition)
+
+# Write a program that:
+
+# Shows a menu:
+
+# 1. Add number  
+# 2. Show list  
+# 3. Exit  
+
+
+
+numbers = []  # list to store numbers
+
+while True:
+    print("\nMenu:")
+    print("1. Add number")
+    print("2. Show list")
+    print("3. Exit")
+
+    choice = input("Enter your choice (1-3): ")
+
+    if choice == "1":
+        num = int(input("Enter a number to add: "))
+        numbers.append(num)
+        print(f"{num} added to the list.")
+    elif choice == "2":
+        print("Current List:", numbers)
+    elif choice == "3":
+        print("Exiting program...")
+        break
+    else:
+        print("Invalid choice! Please enter 1, 2, or 3.")
