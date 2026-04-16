@@ -537,24 +537,91 @@ print("Final list:", items)
 
 
 
-numbers = []  # list to store numbers
+# numbers = []  # list to store numbers
 
-while True:
-    print("\nMenu:")
-    print("1. Add number")
-    print("2. Show list")
-    print("3. Exit")
+# while True:
+#     print("\nMenu:")
+#     print("1. Add number")
+#     print("2. Show list")
+#     print("3. Exit")
 
-    choice = input("Enter your choice (1-3): ")
+#     choice = input("Enter your choice (1-3): ")
 
-    if choice == "1":
-        num = int(input("Enter a number to add: "))
-        numbers.append(num)
-        print(f"{num} added to the list.")
-    elif choice == "2":
-        print("Current List:", numbers)
-    elif choice == "3":
-        print("Exiting program...")
-        break
+#     if choice == "1":
+#         num = int(input("Enter a number to add: "))
+#         numbers.append(num)
+#         print(f"{num} added to the list.")
+#     elif choice == "2":
+#         print("Current List:", numbers)
+#     elif choice == "3":
+#         print("Exiting program...")
+#         break
+#     else:
+#         print("Invalid choice! Please enter 1, 2, or 3.")
+
+
+
+
+
+# Question 21 — Password Strength Checker (String + Condition)
+
+# Write a program that:
+
+# Takes a password as input
+# Checks:
+# Length should be at least 6 characters
+# Must contain at least one digit
+# Print:
+# "Strong Password" or "Weak Password"
+
+
+
+password = input("Enter the password")
+
+has_min_length = len(password) >=8
+has_digit = any(char.isdigit() for char in password)
+
+if has_min_length and has_digit:
+    print("paassword is strong")
+else:
+    print("Password is not strong")
+
+
+# Question 22 — Separate Even & Odd Numbers (List + Loop)
+
+# Write a program that:
+
+# Takes 6 numbers from the user
+# Stores them in a list
+# Creates two separate lists:
+# One for even numbers
+# One for odd numbers
+# Print both lists
+
+# 👉 Example:
+
+# Input: 1 2 3 4 5 6  
+# Output:
+# Even: [2, 4, 6]  
+# Odd: [1, 3, 5]
+
+
+
+numbers = []
+
+for i in range(6):
+    num = int(input(f"Enter the number{i+1}"))
+    numbers.append(num)
+
+
+even = []
+odd = []
+
+for num in numbers:
+    if num % 2 == 0:
+        even.append(num)
     else:
-        print("Invalid choice! Please enter 1, 2, or 3.")
+        odd.append(num)
+
+print("Even: ",even)
+print("Odd: ",odd)
