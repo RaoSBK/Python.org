@@ -576,15 +576,15 @@ print("Final list:", items)
 
 
 
-password = input("Enter the password")
+# password = input("Enter the password")
 
-has_min_length = len(password) >=8
-has_digit = any(char.isdigit() for char in password)
+# has_min_length = len(password) >=8
+# has_digit = any(char.isdigit() for char in password)
 
-if has_min_length and has_digit:
-    print("paassword is strong")
-else:
-    print("Password is not strong")
+# if has_min_length and has_digit:
+#     print("paassword is strong")
+# else:
+#     print("Password is not strong")
 
 
 # Question 22 — Separate Even & Odd Numbers (List + Loop)
@@ -607,21 +607,72 @@ else:
 
 
 
-numbers = []
+# numbers = []
 
-for i in range(6):
-    num = int(input(f"Enter the number{i+1}"))
-    numbers.append(num)
+# for i in range(6):
+#     num = int(input(f"Enter the number{i+1}"))
+#     numbers.append(num)
 
 
-even = []
-odd = []
+# even = []
+# odd = []
 
-for num in numbers:
-    if num % 2 == 0:
-        even.append(num)
-    else:
-        odd.append(num)
+# for num in numbers:
+#     if num % 2 == 0:
+#         even.append(num)
+#     else:
+#         odd.append(num)
 
-print("Even: ",even)
-print("Odd: ",odd)
+# print("Even: ",even)
+# print("Odd: ",odd)
+
+
+
+# Question 23 — Sum of Digits (Loop + Logic)
+
+# Write a program that:
+
+# Takes a number from the user
+# Calculates the sum of its digits
+
+
+
+# Program to calculate sum of digits
+
+# num = int(input("Enter a number: "))
+
+# digit_sum = 0
+
+# while num > 0:
+#     digit = num % 10      
+#     digit_sum += digit   
+#     num = num // 10      
+
+# # Step 4: Print result
+# print("Sum of digits =", digit_sum)
+
+
+
+# Question 24 — Reverse a List (List + Loop)
+
+# Write a program that:
+
+# Takes 5 elements from the user into a list
+# Creates a new list with elements in reverse order (without using .reverse())
+# Print the reversed list
+
+
+
+# Program to reverse a list using loop
+
+my_list = []
+for i in range(5):
+    element = input(f"Enter element {i+1}: ")
+    my_list.append(element)
+
+reversed_list = []
+for i in range(len(my_list)-1, -1, -1):   # loop backwards
+    reversed_list.append(my_list[i])
+
+print("Original list:", my_list)
+print("Reversed list:", reversed_list)
