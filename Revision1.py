@@ -676,3 +676,51 @@ for i in range(len(my_list)-1, -1, -1):   # loop backwards
 
 print("Original list:", my_list)
 print("Reversed list:", reversed_list)
+
+
+
+# Question 25 — Count Vowels (String + Loop)
+
+# Write a program that:
+
+# Takes a sentence from the user
+# Counts how many vowels (a, e, i, o, u) are present
+# Print the total count
+
+
+
+sentence = input("Enter a sentence: ")
+
+vowel_count = 0
+
+vowels = "aeiouAEIOU"
+
+for char in sentence:
+    if char in vowels:
+        vowel_count += 1
+
+print("Total number of vowels:", vowel_count)
+
+
+
+# Question 26 — Find Second Largest Number (List + Logic)
+
+# Write a program that:
+
+# Takes 5 numbers from the user
+# Finds the second largest number in the list
+# Print it
+
+
+
+
+numbers = []
+for i in range(5):
+    num = int(input(f"Enter number {i+1}: "))
+    numbers.append(num)
+
+numbers.sort(reverse=True)
+
+second_largest = numbers[1]
+
+print("The second largest number is:", second_largest)
