@@ -714,13 +714,58 @@ print("Total number of vowels:", vowel_count)
 
 
 
-numbers = []
-for i in range(5):
-    num = int(input(f"Enter number {i+1}: "))
-    numbers.append(num)
+# numbers = []
+# for i in range(5):
+#     num = int(input(f"Enter number {i+1}: "))
+#     numbers.append(num)
 
-numbers.sort(reverse=True)
+# numbers.sort(reverse=True)
 
-second_largest = numbers[1]
+# second_largest = numbers[1]
 
-print("The second largest number is:", second_largest)
+# print("The second largest number is:", second_largest)
+
+
+
+# Question 27 — Factorial of a Number (Loop + Logic)
+
+# Write a program that:
+
+# Takes a number from the user
+# Calculates its factorial
+
+
+
+
+# num = int(input("Enter a number: "))
+
+# factorial = 1
+
+# for i in range(1, num + 1):
+#     factorial *= i
+
+# print("Factorial of", num, "is:", factorial)
+
+
+
+# Question 28 — Common Elements in Two Lists (List + Condition)
+
+# Write a program that:
+
+# Takes two lists of numbers from the user
+# Finds and prints the common elements between them
+
+
+
+list1 = list(map(int, input("Enter numbers for List 1 (space-separated): ").split()))
+list2 = list(map(int, input("Enter numbers for List 2 (space-separated): ").split()))
+
+common_elements = []
+for num in list1:
+    if num in list2 and num not in common_elements:
+        common_elements.append(num)
+
+if common_elements:
+    print("Common elements:", common_elements)
+else:
+    print("No common elements found.")
