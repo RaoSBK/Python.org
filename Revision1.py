@@ -663,19 +663,18 @@ print("Final list:", items)
 
 
 
-# Program to reverse a list using loop
 
-my_list = []
-for i in range(5):
-    element = input(f"Enter element {i+1}: ")
-    my_list.append(element)
+# my_list = []
+# for i in range(5):
+#     element = input(f"Enter element {i+1}: ")
+#     my_list.append(element)
 
-reversed_list = []
-for i in range(len(my_list)-1, -1, -1):   # loop backwards
-    reversed_list.append(my_list[i])
+# reversed_list = []
+# for i in range(len(my_list)-1, -1, -1):   # loop backwards
+#     reversed_list.append(my_list[i])
 
-print("Original list:", my_list)
-print("Reversed list:", reversed_list)
+# print("Original list:", my_list)
+# print("Reversed list:", reversed_list)
 
 
 
@@ -689,17 +688,17 @@ print("Reversed list:", reversed_list)
 
 
 
-sentence = input("Enter a sentence: ")
+# sentence = input("Enter a sentence: ")
 
-vowel_count = 0
+# vowel_count = 0
 
-vowels = "aeiouAEIOU"
+# vowels = "aeiouAEIOU"
 
-for char in sentence:
-    if char in vowels:
-        vowel_count += 1
+# for char in sentence:
+#     if char in vowels:
+#         vowel_count += 1
 
-print("Total number of vowels:", vowel_count)
+# print("Total number of vowels:", vowel_count)
 
 
 
@@ -757,15 +756,99 @@ print("Total number of vowels:", vowel_count)
 
 
 
-list1 = list(map(int, input("Enter numbers for List 1 (space-separated): ").split()))
-list2 = list(map(int, input("Enter numbers for List 2 (space-separated): ").split()))
+# list1 = list(map(int, input("Enter numbers for List 1 (space-separated): ").split()))
+# list2 = list(map(int, input("Enter numbers for List 2 (space-separated): ").split()))
 
-common_elements = []
-for num in list1:
-    if num in list2 and num not in common_elements:
-        common_elements.append(num)
+# common_elements = []
+# for num in list1:
+#     if num in list2 and num not in common_elements:
+#         common_elements.append(num)
 
-if common_elements:
-    print("Common elements:", common_elements)
-else:
-    print("No common elements found.")
+# if common_elements:
+#     print("Common elements:", common_elements)
+# else:
+#     print("No common elements found.")
+
+
+
+
+# Question 29 — Remove Duplicates (List + Logic)
+
+# Write a program that:
+
+# Takes a list of numbers from the user
+# Removes all duplicate values
+# Prints a list with only unique elements (without using set())
+
+
+
+
+# user_input = input("Enter values (space-separated): ").split()
+
+# numbers = []
+# for item in user_input:
+#     if item.isdigit():   
+#         numbers.append(int(item))
+#     else:
+#         print(f"Skipping invalid input: {item}")
+
+# unique_numbers = []
+# for num in numbers:
+#     if num not in unique_numbers:
+#         unique_numbers.append(num)
+
+# print("List with unique elements:", unique_numbers)
+
+
+
+# Question 30 — Simple Calculator (Menu + Loop)
+
+# Write a program that:
+
+# Displays a menu:
+
+# 1. Add  
+# 2. Subtract  
+# 3. Multiply  
+# 4. Divide  
+# 5. Exit  
+# Takes user choice and two numbers
+# Performs the selected operation
+# Runs continuously until user chooses Exit
+
+
+
+while True:
+    print("\n--- Simple Calculator ---")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Exit")
+
+    choice = input("Enter your choice (1-5): ")
+
+    if choice == '5':
+        print("Exiting calculator. Goodbye!")
+        break
+
+    try:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+    except ValueError:
+        print("Invalid input! Please enter numeric values.")
+        continue
+
+    if choice == '1':
+        print("Result:", num1 + num2)
+    elif choice == '2':
+        print("Result:", num1 - num2)
+    elif choice == '3':
+        print("Result:", num1 * num2)
+    elif choice == '4':
+        if num2 != 0:
+            print("Result:", num1 / num2)
+        else:
+            print("Error: Division by zero is not allowed.")
+    else:
+        print("Invalid choice! Please select from 1 to 5.")
