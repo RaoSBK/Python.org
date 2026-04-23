@@ -818,37 +818,91 @@ print("Final list:", items)
 
 
 
-while True:
-    print("\n--- Simple Calculator ---")
-    print("1. Add")
-    print("2. Subtract")
-    print("3. Multiply")
-    print("4. Divide")
-    print("5. Exit")
+# while True:
+#     print("\n--- Simple Calculator ---")
+#     print("1. Add")
+#     print("2. Subtract")
+#     print("3. Multiply")
+#     print("4. Divide")
+#     print("5. Exit")
 
-    choice = input("Enter your choice (1-5): ")
+#     choice = input("Enter your choice (1-5): ")
 
-    if choice == '5':
-        print("Exiting calculator. Goodbye!")
-        break
+#     if choice == '5':
+#         print("Exiting calculator. Goodbye!")
+#         break
 
-    try:
-        num1 = float(input("Enter first number: "))
-        num2 = float(input("Enter second number: "))
-    except ValueError:
-        print("Invalid input! Please enter numeric values.")
-        continue
+#     try:
+#         num1 = float(input("Enter first number: "))
+#         num2 = float(input("Enter second number: "))
+#     except ValueError:
+#         print("Invalid input! Please enter numeric values.")
+#         continue
 
-    if choice == '1':
-        print("Result:", num1 + num2)
-    elif choice == '2':
-        print("Result:", num1 - num2)
-    elif choice == '3':
-        print("Result:", num1 * num2)
-    elif choice == '4':
-        if num2 != 0:
-            print("Result:", num1 / num2)
-        else:
-            print("Error: Division by zero is not allowed.")
-    else:
-        print("Invalid choice! Please select from 1 to 5.")
+#     if choice == '1':
+#         print("Result:", num1 + num2)
+#     elif choice == '2':
+#         print("Result:", num1 - num2)
+#     elif choice == '3':
+#         print("Result:", num1 * num2)
+#     elif choice == '4':
+#         if num2 != 0:
+#             print("Result:", num1 / num2)
+#         else:
+#             print("Error: Division by zero is not allowed.")
+#     else:
+#         print("Invalid choice! Please select from 1 to 5.")
+
+
+
+# Question 31 — Armstrong Number Check (Loop + Logic)
+
+# Write a program that:
+
+# Takes a number from the user
+# Checks whether it is an Armstrong number
+
+
+
+
+# num = int(input("Enter a number: "))
+
+# num_str = str(num)
+# num_digits = len(num_str)
+
+# armstrong_sum = 0
+
+# for digit in num_str:
+#     armstrong_sum += int(digit) ** num_digits
+
+# if armstrong_sum == num:
+#     print(num, "is an Armstrong number")
+# else:
+#     print(num, "is NOT an Armstrong number")
+
+
+
+# Question 32 — Count Words in Sentence (String + Loop)
+
+# Write a program that:
+
+# Takes a sentence from the user
+# Counts how many words are present
+# Print total words
+
+
+
+sentence = input("Enter a sentence: ")
+
+word_count = 0
+
+in_word = False
+
+for char in sentence:
+    if char != " " and not in_word:
+        in_word = True
+        word_count += 1
+    elif char == " ":
+        in_word = False
+
+print("Total number of words:", word_count)
