@@ -892,17 +892,62 @@ print("Final list:", items)
 
 
 
-sentence = input("Enter a sentence: ")
+# sentence = input("Enter a sentence: ")
 
-word_count = 0
+# word_count = 0
 
-in_word = False
+# in_word = False
 
-for char in sentence:
-    if char != " " and not in_word:
-        in_word = True
-        word_count += 1
-    elif char == " ":
-        in_word = False
+# for char in sentence:
+#     if char != " " and not in_word:
+#         in_word = True
+#         word_count += 1
+#     elif char == " ":
+#         in_word = False
 
-print("Total number of words:", word_count)
+# print("Total number of words:", word_count)
+
+
+
+# Question 33 — Fibonacci Series (Loop + Logic)
+
+# Write a program that:
+
+# Takes a number n from the user
+# Prints the first n terms of the Fibonacci series
+
+
+
+# n = int(input("Enter the number of terms: "))
+
+# a, b = 0, 1
+
+# print("Fibonacci Series:")
+
+# for i in range(n):
+#     print(a, end=" ")
+#     a, b = b, a + b
+
+
+
+# Question 34 — Count Characters (String + Dictionary)
+
+# Write a program that:
+
+# Takes a string from the user
+# Counts how many times each character appears
+# Store result in a dictionary
+
+
+
+text = input("Enter a string: ")
+
+char_count = {}
+
+for char in text:
+    if char in char_count:
+        char_count[char] += 1
+    else:
+        char_count[char] = 1
+
+print("Character frequencies:", char_count)
