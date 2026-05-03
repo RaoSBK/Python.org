@@ -940,14 +940,75 @@ print("Final list:", items)
 
 
 
-text = input("Enter a string: ")
+# text = input("Enter a string: ")
 
-char_count = {}
+# char_count = {}
 
-for char in text:
-    if char in char_count:
-        char_count[char] += 1
-    else:
-        char_count[char] = 1
+# for char in text:
+#     if char in char_count:
+#         char_count[char] += 1
+#     else:
+#         char_count[char] = 1
 
-print("Character frequencies:", char_count)
+# print("Character frequencies:", char_count)
+
+
+
+
+
+# Question 35 — Anagram Checker (String + Logic)
+
+# Write a program that:
+
+# Takes two strings from the user
+# Checks whether they are anagrams (same characters, different order)
+# Ignore spaces and case
+
+
+
+# def is_anagram(str1, str2):
+#     str1 = str1.replace(" ", "").lower()
+#     str2 = str2.replace(" ", "").lower()
+    
+#     return sorted(str1) == sorted(str2)
+
+# string1 = input("Enter first string: ")
+# string2 = input("Enter second string: ")
+
+# if is_anagram(string1, string2):
+#     print("The strings are anagrams.")
+# else:
+#     print("The strings are not anagrams.")
+
+
+# Question 36 — Running Average (While + Input + Aggregation)
+
+# Write a program that:
+
+# Continuously asks the user to enter numbers
+# Stops when the user types "stop"
+# Calculates and prints the average of entered numbers
+
+
+
+total = 0
+count = 0
+
+while True:
+    user_input = input("Enter a number (or type 'stop' to finish): ")
+
+    if user_input.lower() == "stop":
+        break
+
+    try:
+        number = float(user_input)
+        total += number
+        count += 1
+    except ValueError:
+        print("Invalid input! Please enter a number or 'stop'.")
+
+if count > 0:
+    average = total / count
+    print("Average of entered numbers:", average)
+else:
+    print("No numbers were entered.")
