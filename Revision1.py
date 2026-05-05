@@ -991,24 +991,69 @@ print("Final list:", items)
 
 
 
-total = 0
-count = 0
+# total = 0
+# count = 0
 
-while True:
-    user_input = input("Enter a number (or type 'stop' to finish): ")
+# while True:
+#     user_input = input("Enter a number (or type 'stop' to finish): ")
 
-    if user_input.lower() == "stop":
+#     if user_input.lower() == "stop":
+#         break
+
+#     try:
+#         number = float(user_input)
+#         total += number
+#         count += 1
+#     except ValueError:
+#         print("Invalid input! Please enter a number or 'stop'.")
+
+# if count > 0:
+#     average = total / count
+#     print("Average of entered numbers:", average)
+# else:
+#     print("No numbers were entered.")
+
+
+
+# Question 37 — Number Pattern (Loop + Nested Logic)
+
+# Write a program that:
+
+# Takes a number n from the user
+# Prints the following pattern:
+
+
+
+# n = int(input("Enter the number of rows: "))
+
+# for i in range(1, n + 1):
+#     for j in range(1, i + 1):
+#         print(j, end=" ")
+#     print()  # Move to next line
+
+
+# Question 38 — Highest Frequency Element (List + Dictionary)
+
+# Write a program that:
+
+# Takes a list of numbers from the user
+# Finds the element that appears most frequently
+# Prints that element
+
+
+
+numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+
+frequency = {}
+
+for num in numbers:
+    if num in frequency:
+        frequency[num] += 1
+    else:
+        frequency[num] = 1
+
+max_freq = max(frequency.values())
+for key, value in frequency.items():
+    if value == max_freq:
+        print("Element with highest frequency:", key)
         break
-
-    try:
-        number = float(user_input)
-        total += number
-        count += 1
-    except ValueError:
-        print("Invalid input! Please enter a number or 'stop'.")
-
-if count > 0:
-    average = total / count
-    print("Average of entered numbers:", average)
-else:
-    print("No numbers were entered.")
