@@ -1042,18 +1042,75 @@ print("Final list:", items)
 
 
 
-numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+# numbers = list(map(int, input("Enter numbers separated by space: ").split()))
 
-frequency = {}
+# frequency = {}
 
-for num in numbers:
-    if num in frequency:
-        frequency[num] += 1
+# for num in numbers:
+#     if num in frequency:
+#         frequency[num] += 1
+#     else:
+#         frequency[num] = 1
+
+# max_freq = max(frequency.values())
+# for key, value in frequency.items():
+#     if value == max_freq:
+#         print("Element with highest frequency:", key)
+#         break
+
+
+# Question 39 — Reverse a Number (Loop + Math Logic)
+
+# Write a program that:
+
+# Takes a number from the user
+# Reverses the number
+# Prints the reversed number
+
+# num = int (input("Enter a number:"))
+
+# reversed_num = 0
+# temp = num
+
+
+# while temp > 0:
+#     digit = temp % 10
+#     reversed_num = reversed_num * 10 + digit
+#     temp //= 10
+
+#     print("Reversed number =  ", reversed_num)
+
+
+# Question 40 — Student Grade System (Dictionary + Condition)
+
+# Write a program that:
+
+# Stores student names and marks in a dictionary
+# Prints grades based on marks:
+
+
+
+students = {
+    "Alice": 85,
+    "Bob": 72,
+    "Charlie": 90,
+    "David": 60,
+    "Eva": 45
+}
+
+def get_grade(marks):
+    if marks >= 90:
+        return "A+"
+    elif marks >= 80:
+        return "A"
+    elif marks >= 70:
+        return "B"
+    elif marks >= 60:
+        return "C"
+    elif marks >= 50:
+        return "D"
     else:
-        frequency[num] = 1
+        return "F"
 
-max_freq = max(frequency.values())
-for key, value in frequency.items():
-    if value == max_freq:
-        print("Element with highest frequency:", key)
-        break
+for name, marks in students.items():
+    print(name, ":", get_grade(marks))
