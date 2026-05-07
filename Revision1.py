@@ -1090,27 +1090,77 @@ print("Final list:", items)
 
 
 
-students = {
-    "Alice": 85,
-    "Bob": 72,
-    "Charlie": 90,
-    "David": 60,
-    "Eva": 45
-}
+# students = {
+#     "Alice": 85,
+#     "Bob": 72,
+#     "Charlie": 90,
+#     "David": 60,
+#     "Eva": 45
+# }
 
-def get_grade(marks):
-    if marks >= 90:
-        return "A+"
-    elif marks >= 80:
-        return "A"
-    elif marks >= 70:
-        return "B"
-    elif marks >= 60:
-        return "C"
-    elif marks >= 50:
-        return "D"
-    else:
-        return "F"
+# def get_grade(marks):
+#     if marks >= 90:
+#         return "A+"
+#     elif marks >= 80:
+#         return "A"
+#     elif marks >= 70:
+#         return "B"
+#     elif marks >= 60:
+#         return "C"
+#     elif marks >= 50:
+#         return "D"
+#     else:
+#         return "F"
 
-for name, marks in students.items():
-    print(name, ":", get_grade(marks))
+# for name, marks in students.items():
+#     print(name, ":", get_grade(marks))
+
+
+# Question 41 — Find Missing Number (List + Logic)
+
+# Write a program that:
+
+# Takes a list containing numbers from 1 to n
+# One number is missing
+# Find and print the missing number
+
+
+
+# n = int(input("Enter the value of n: "))
+# numbers = list(map(int, input("Enter the numbers separated by space: ").split()))
+
+# expected_sum = n * (n + 1) // 2
+
+# actual_sum = sum(numbers)
+
+# missing_number = expected_sum - actual_sum
+
+# print("The missing number is:", missing_number)
+
+
+
+
+
+# Question 42 — Simple Voting System (While + Dictionary)
+
+# Write a program that:
+
+# Allows users to vote for a candidate
+# Store votes in a dictionary
+# Continue voting until user types "stop"
+# At the end:
+# Print total votes for each candidate
+# Print winner (highest votes)
+
+
+
+n = int(input("Enter the value of n: "))
+numbers = list(map(int, input("Enter the numbers separated by space: ").split()))
+
+expected_sum = n * (n + 1) // 2
+
+actual_sum = sum(numbers)
+
+missing_number = expected_sum - actual_sum
+
+print("The missing number is:", missing_number)
