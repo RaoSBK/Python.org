@@ -1154,13 +1154,82 @@ print("Final list:", items)
 
 
 
-n = int(input("Enter the value of n: "))
-numbers = list(map(int, input("Enter the numbers separated by space: ").split()))
+# n = int(input("Enter the value of n: "))
+# numbers = list(map(int, input("Enter the numbers separated by space: ").split()))
 
-expected_sum = n * (n + 1) // 2
+# expected_sum = n * (n + 1) // 2
 
-actual_sum = sum(numbers)
+# actual_sum = sum(numbers)
 
-missing_number = expected_sum - actual_sum
+# missing_number = expected_sum - actual_sum
 
-print("The missing number is:", missing_number)
+# print("The missing number is:", missing_number)
+
+
+
+# Question 43 — Matrix Addition (Nested Lists + Loops)
+
+# Write a program that:
+
+# Takes two 2x2 matrices from the user
+# Adds them element by element
+# Prints the resulting matrix
+
+
+
+# print("Enter elements of first 2x2 matrix:")
+# matrix1 = []
+# for i in range(2):
+#     row = []
+#     for j in range(2):
+#         val = int(input(f"Enter element [{i+1}][{j+1}]: "))
+#         row.append(val)
+#     matrix1.append(row)
+
+# print("\nEnter elements of second 2x2 matrix:")
+# matrix2 = []
+# for i in range(2):
+#     row = []
+#     for j in range(2):
+#         val = int(input(f"Enter element [{i+1}][{j+1}]: "))
+#         row.append(val)
+#     matrix2.append(row)
+
+# result = []
+# for i in range(2):
+#     row = []
+#     for j in range(2):
+#         row.append(matrix1[i][j] + matrix2[i][j])
+#     result.append(row)
+
+# print("\nResultant Matrix after Addition:")
+# for row in result:
+#     print(row)
+
+
+
+
+# Question 44 — Longest Word Finder (String + List Logic)
+
+# Write a program that:
+
+# Takes a sentence from the user
+# Finds the longest word in the sentence
+# Prints the word and its length
+
+
+
+sentence = input("Enter a sentence: ")
+
+words = sentence.split()
+
+longest_word = ""
+max_length = 0
+
+for word in words:
+    if len(word) > max_length:
+        longest_word = word
+        max_length = len(word)
+
+print("Longest word:", longest_word)
+print("Length:", max_length)
