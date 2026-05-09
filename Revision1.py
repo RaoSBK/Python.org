@@ -1219,17 +1219,59 @@ print("Final list:", items)
 
 
 
-sentence = input("Enter a sentence: ")
+# sentence = input("Enter a sentence: ")
 
-words = sentence.split()
+# words = sentence.split()
 
-longest_word = ""
-max_length = 0
+# longest_word = ""
+# max_length = 0
 
-for word in words:
-    if len(word) > max_length:
-        longest_word = word
-        max_length = len(word)
+# for word in words:
+#     if len(word) > max_length:
+#         longest_word = word
+#         max_length = len(word)
 
-print("Longest word:", longest_word)
-print("Length:", max_length)
+# print("Longest word:", longest_word)
+# print("Length:", max_length)
+
+
+
+# Question 45 — Remove Spaces from String (String Processing)
+
+# Write a program that:
+
+# Takes a sentence from the user
+# Removes all spaces from the string
+# Prints the updated string
+
+
+
+# sentence = input("Enter a sentence: ")
+
+# updated_sentence = sentence.replace(" ", "")
+
+# print("String without spaces:", updated_sentence)
+
+
+
+# Question 46 — Merge Two Dictionaries (Dictionary + Loop)
+
+# Write a program that:
+
+# Creates two dictionaries
+# Merges them into a single dictionary
+# If same key exists, add their values together
+
+
+
+dict1 = {"a": 10, "b": 20, "c": 30}
+dict2 = {"b": 5, "c": 15, "d": 25}
+
+merged_dict = dict1.copy()  
+for key, value in dict2.items():
+    if key in merged_dict:
+        merged_dict[key] += value  
+    else:
+        merged_dict[key] = value  
+
+print("Merged Dictionary:", merged_dict)
