@@ -1264,14 +1264,58 @@ print("Final list:", items)
 
 
 
-dict1 = {"a": 10, "b": 20, "c": 30}
-dict2 = {"b": 5, "c": 15, "d": 25}
+# dict1 = {"a": 10, "b": 20, "c": 30}
+# dict2 = {"b": 5, "c": 15, "d": 25}
 
-merged_dict = dict1.copy()  
-for key, value in dict2.items():
-    if key in merged_dict:
-        merged_dict[key] += value  
-    else:
-        merged_dict[key] = value  
+# merged_dict = dict1.copy()  
+# for key, value in dict2.items():
+#     if key in merged_dict:
+#         merged_dict[key] += value  
+#     else:
+#         merged_dict[key] = value  
 
-print("Merged Dictionary:", merged_dict)
+# print("Merged Dictionary:", merged_dict)
+
+
+
+# Question 47 — Perfect Number Check (Loop + Math Logic)
+
+# Write a program that:
+
+# Takes a number from the user
+# Checks whether it is a Perfect Number
+
+
+
+
+# num = int(input("Enter a number: "))
+
+# sum_of_divisors = 0
+
+# for i in range(1, num):
+#     if num % i == 0:  
+#         sum_of_divisors += i
+
+# if sum_of_divisors == num:
+#     print(num, "is a Perfect Number")
+# else:
+#     print(num, "is NOT a Perfect Number")
+
+
+# Question 48 — Rotate a List (List Manipulation)
+
+# Write a program that:
+
+# Takes a list and a number k from the user
+# Rotates the list to the right by k positions
+
+
+
+numbers = list(map(int, input("Enter the list elements separated by space: ").split()))
+k = int(input("Enter the value of k: "))
+
+k = k % len(numbers)
+
+rotated_list = numbers[-k:] + numbers[:-k]
+
+print("Rotated List:", rotated_list)
