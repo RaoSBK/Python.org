@@ -1311,11 +1311,75 @@ print("Final list:", items)
 
 
 
-numbers = list(map(int, input("Enter the list elements separated by space: ").split()))
-k = int(input("Enter the value of k: "))
+# numbers = list(map(int, input("Enter the list elements separated by space: ").split()))
+# k = int(input("Enter the value of k: "))
 
-k = k % len(numbers)
+# k = k % len(numbers)
 
-rotated_list = numbers[-k:] + numbers[:-k]
+# rotated_list = numbers[-k:] + numbers[:-k]
 
-print("Rotated List:", rotated_list)
+# print("Rotated List:", rotated_list)
+
+
+
+# Question 49 — Check Balanced Parentheses (Stack Logic using List)
+
+# Write a program that:
+
+# Takes an expression from the user
+# Checks whether parentheses are balanced
+
+
+
+
+# def is_balanced(expression):
+#     stack = []
+#     pairs = {')': '(', '[': ']', '}': '{'}
+    
+#     for char in expression:
+#         if char in "([{":
+#             stack.append(char)
+#         elif char in ")]}":
+#             if not stack or stack[-1] != pairs[char]:
+#                 return False
+#             stack.pop()
+
+#     return len(stack) == 0
+
+# expr = input("Enter an expression: ")
+
+# if  is_balanced(expr):
+#     print("Parentheses are balanced.")
+# else:
+#     print("Parantheses are NOT balanced.")
+
+
+
+# Question 50 — Find Duplicate Elements (List + Frequency Logic)
+
+# Write a program that:
+
+# Takes a list of numbers from the user
+# Finds all duplicate elements
+# Prints duplicates only once
+
+
+number = list(map(int, input("Enter numbers separated by space:").split()))
+
+frequency = {}
+
+for num in numbers:
+    if num in frequency:
+        frequency[num] +=1
+    else:
+        frequency[num] = 1
+
+duplicates = []
+for key, value in frequency.items():
+    if value > 1:
+        duplicates.append(key)
+
+if duplicates:
+    print("Duplicate elements: ", duplicates)
+else:
+    print("No duplicates found.")
