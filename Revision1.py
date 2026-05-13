@@ -1364,22 +1364,73 @@ print("Final list:", items)
 # Prints duplicates only once
 
 
-number = list(map(int, input("Enter numbers separated by space:").split()))
+# number = list(map(int, input("Enter numbers separated by space:").split()))
 
-frequency = {}
+# frequency = {}
 
-for num in numbers:
-    if num in frequency:
-        frequency[num] +=1
-    else:
-        frequency[num] = 1
+# for num in numbers:
+#     if num in frequency:
+#         frequency[num] +=1
+#     else:
+#         frequency[num] = 1
 
-duplicates = []
-for key, value in frequency.items():
-    if value > 1:
-        duplicates.append(key)
+# duplicates = []
+# for key, value in frequency.items():
+#     if value > 1:
+#         duplicates.append(key)
 
-if duplicates:
-    print("Duplicate elements: ", duplicates)
-else:
-    print("No duplicates found.")
+# if duplicates:
+#     print("Duplicate elements: ", duplicates)
+# else:
+#     print("No duplicates found.")
+
+
+
+# Question 51 — Decimal to Binary Converter (Loop + Math Logic)
+
+# Write a program that:
+
+# Takes a decimal number from the user
+# Converts it into binary format without using bin()
+
+# Program: Decimal to Binary Converter
+
+# num = int(input("Enter a decimal number: "))
+
+# binary = ""
+# temp = num
+
+# while temp > 0:
+#     remainder = temp % 2          
+#     binary = str(remainder) + binary  
+#     temp //= 2                
+
+
+# print("Binary representation of", num, "is:", binary)
+
+
+
+
+# Question 52 — Find Pair with Given Sum (List + Nested Loop)
+
+# Write a program that:
+
+# Takes a list of numbers and a target sum
+# Finds all pairs whose sum equals the target
+
+
+
+numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+
+target = int(input("Enter the target sum: "))
+
+print("Pairs with sum", target, ":")
+found = False
+for i in range(len(numbers)):
+    for j in range(i + 1, len(numbers)):
+        if numbers[i] + numbers[j] == target:
+            print(numbers[i], "+", numbers[j], "=", target)
+            found = True
+
+if not found:
+    print("No pairs found.")
