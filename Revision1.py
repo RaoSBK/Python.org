@@ -1420,17 +1420,58 @@ print("Final list:", items)
 
 
 
-numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+# numbers = list(map(int, input("Enter numbers separated by space: ").split()))
 
-target = int(input("Enter the target sum: "))
+# target = int(input("Enter the target sum: "))
 
-print("Pairs with sum", target, ":")
-found = False
+# print("Pairs with sum", target, ":")
+# found = False
+# for i in range(len(numbers)):
+#     for j in range(i + 1, len(numbers)):
+#         if numbers[i] + numbers[j] == target:
+#             print(numbers[i], "+", numbers[j], "=", target)
+#             found = True
+
+# if not found:
+#     print("No pairs found.")
+
+
+
+
+# Question 53 — Check Leap Year (Condition + Logic)
+
+# Write a program that:
+
+# Takes a year from the user
+# Checks whether it is a Leap Year
+
+
+
+# year = int(input("Enter a year: "))
+
+# if (year % 400 == 0) or (year % 100 != 0 and year % 4 == 0):
+#     print(year, "is a Leap Year")
+# else:
+#     print(year, "is NOT a Leap Year")
+
+
+
+# Question 54 — Sort List Without Using sort() (Logic Building)
+
+# Write a program that:
+
+# Takes a list of numbers from the user
+# Sorts the list in ascending order without using sort() or sorted()
+
+
+
+numbers = list(map(int, input("Enter numbers (space-separated): ").split()))
+
+
 for i in range(len(numbers)):
-    for j in range(i + 1, len(numbers)):
-        if numbers[i] + numbers[j] == target:
-            print(numbers[i], "+", numbers[j], "=", target)
-            found = True
+    for j in range(len(numbers) - i - 1):
+        if numbers[j] > numbers[j + 1]:
+            # Swap elements
+            numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
 
-if not found:
-    print("No pairs found.")
+print("Sorted list in ascending order:", numbers)
