@@ -1465,13 +1465,92 @@ print("Final list:", items)
 
 
 
-numbers = list(map(int, input("Enter numbers (space-separated): ").split()))
+# numbers = list(map(int, input("Enter numbers (space-separated): ").split()))
 
 
-for i in range(len(numbers)):
-    for j in range(len(numbers) - i - 1):
-        if numbers[j] > numbers[j + 1]:
-            # Swap elements
-            numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+# for i in range(len(numbers)):
+#     for j in range(len(numbers) - i - 1):
+#         if numbers[j] > numbers[j + 1]:
+#             # Swap elements
+#             numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
 
-print("Sorted list in ascending order:", numbers)
+# print("Sorted list in ascending order:", numbers)
+
+
+
+# Question 55 — Find All Divisors of a Number (Loop + Math Logic)
+
+# Write a program that:
+
+# Takes a number from the user
+# Prints all its divisors
+
+
+
+# num = int(input("Enter a number: "))
+
+# print("Divisors of", num, "are:")
+
+# for i in range(1, num + 1):
+#     if num % i == 0: 
+#         print(i)
+
+
+
+
+# Question 56 — Simple Contact Book (Dictionary + Loop)
+
+# Write a program that:
+
+# Creates a contact book using a dictionary
+# Menu options:
+
+
+
+contacts = {} 
+
+while True:
+    print("\n--- Contact Book Menu ---")
+    print("1. Add Contact")
+    print("2. View Contact")
+    print("3. Delete Contact")
+    print("4. Show All Contacts")
+    print("5. Exit")
+
+    choice = input("Enter your choice (1-5): ")
+
+    if choice == '1':
+        name = input("Enter contact name: ")
+        number = input("Enter contact number: ")
+        contacts[name] = number
+        print("Contact added successfully!")
+
+    elif choice == '2':
+        name = input("Enter contact name to view: ")
+        if name in contacts:
+            print("Name:", name, " | Number:", contacts[name])
+        else:
+            print("Contact not found!")
+
+    elif choice == '3':
+        name = input("Enter contact name to delete: ")
+        if name in contacts:
+            del contacts[name]
+            print("Contact deleted successfully!")
+        else:
+            print("Contact not found!")
+
+    elif choice == '4':
+        if contacts:
+            print("\n--- All Contacts ---")
+            for name, number in contacts.items():
+                print("Name:", name, " | Number:", number)
+        else:
+            print("No contacts available.")
+
+    elif choice == '5':
+        print("Exiting Contact Book. Goodbye!")
+        break
+
+    else:
+        print("Invalid choice! Please select from 1 to 5.")
