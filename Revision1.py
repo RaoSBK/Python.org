@@ -1507,50 +1507,111 @@ print("Final list:", items)
 
 
 
-contacts = {} 
+# contacts = {} 
 
-while True:
-    print("\n--- Contact Book Menu ---")
-    print("1. Add Contact")
-    print("2. View Contact")
-    print("3. Delete Contact")
-    print("4. Show All Contacts")
-    print("5. Exit")
+# while True:
+#     print("\n--- Contact Book Menu ---")
+#     print("1. Add Contact")
+#     print("2. View Contact")
+#     print("3. Delete Contact")
+#     print("4. Show All Contacts")
+#     print("5. Exit")
 
-    choice = input("Enter your choice (1-5): ")
+#     choice = input("Enter your choice (1-5): ")
 
-    if choice == '1':
-        name = input("Enter contact name: ")
-        number = input("Enter contact number: ")
-        contacts[name] = number
-        print("Contact added successfully!")
+#     if choice == '1':
+#         name = input("Enter contact name: ")
+#         number = input("Enter contact number: ")
+#         contacts[name] = number
+#         print("Contact added successfully!")
 
-    elif choice == '2':
-        name = input("Enter contact name to view: ")
-        if name in contacts:
-            print("Name:", name, " | Number:", contacts[name])
-        else:
-            print("Contact not found!")
+#     elif choice == '2':
+#         name = input("Enter contact name to view: ")
+#         if name in contacts:
+#             print("Name:", name, " | Number:", contacts[name])
+#         else:
+#             print("Contact not found!")
 
-    elif choice == '3':
-        name = input("Enter contact name to delete: ")
-        if name in contacts:
-            del contacts[name]
-            print("Contact deleted successfully!")
-        else:
-            print("Contact not found!")
+#     elif choice == '3':
+#         name = input("Enter contact name to delete: ")
+#         if name in contacts:
+#             del contacts[name]
+#             print("Contact deleted successfully!")
+#         else:
+#             print("Contact not found!")
 
-    elif choice == '4':
-        if contacts:
-            print("\n--- All Contacts ---")
-            for name, number in contacts.items():
-                print("Name:", name, " | Number:", number)
-        else:
-            print("No contacts available.")
+#     elif choice == '4':
+#         if contacts:
+#             print("\n--- All Contacts ---")
+#             for name, number in contacts.items():
+#                 print("Name:", name, " | Number:", number)
+#         else:
+#             print("No contacts available.")
 
-    elif choice == '5':
-        print("Exiting Contact Book. Goodbye!")
-        break
+#     elif choice == '5':
+#         print("Exiting Contact Book. Goodbye!")
+#         break
 
-    else:
-        print("Invalid choice! Please select from 1 to 5.")
+#     else:
+#         print("Invalid choice! Please select from 1 to 5.")
+
+
+
+
+
+# Question 57 — Check Whether Two Lists Are Equal (List + Logic)
+
+# Write a program that:
+
+# Takes two lists from the user
+# Checks whether both lists are equal
+# Print:
+# "Equal" if same elements in same order
+# "Not Equal" otherwise
+
+
+
+
+# list1 = list(map(int, input("Enter numbers for List 1 (space-separated): ").split()))
+# list2 = list(map(int, input("Enter numbers for List 2 (space-separated): ").split()))
+
+
+# if list1 == list2:
+#     print("Equal")
+# else:
+#     print("Not Equal")
+
+
+
+
+
+# Question 58 — Count Uppercase, Lowercase, and Digits (String Processing)
+
+# Write a program that:
+
+# Takes a string from the user
+# Counts:
+# Uppercase letters
+# Lowercase letters
+# Digits
+
+
+
+text = input("Enter a string: ")
+
+uppercase_count = 0
+lowercase_count = 0
+digit_count = 0
+
+for char in text:
+    if char.isupper():
+        uppercase_count += 1
+    elif char.islower():
+        lowercase_count += 1
+    elif char.isdigit():
+        digit_count += 1
+
+# Print results
+print("Uppercase letters:", uppercase_count)
+print("Lowercase letters:", lowercase_count)
+print("Digits:", digit_count)
