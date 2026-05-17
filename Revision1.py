@@ -1597,21 +1597,69 @@ print("Final list:", items)
 
 
 
-text = input("Enter a string: ")
+# text = input("Enter a string: ")
 
-uppercase_count = 0
-lowercase_count = 0
-digit_count = 0
+# uppercase_count = 0
+# lowercase_count = 0
+# digit_count = 0
 
-for char in text:
-    if char.isupper():
-        uppercase_count += 1
-    elif char.islower():
-        lowercase_count += 1
-    elif char.isdigit():
-        digit_count += 1
+# for char in text:
+#     if char.isupper():
+#         uppercase_count += 1
+#     elif char.islower():
+#         lowercase_count += 1
+#     elif char.isdigit():
+#         digit_count += 1
 
-# Print results
-print("Uppercase letters:", uppercase_count)
-print("Lowercase letters:", lowercase_count)
-print("Digits:", digit_count)
+# # Print results
+# print("Uppercase letters:", uppercase_count)
+# print("Lowercase letters:", lowercase_count)
+# print("Digits:", digit_count)
+
+
+
+# uestion 59 — Find GCD of Two Numbers (Math + Loop Logic)
+
+# Write a program that:
+
+# Takes two numbers from the user
+# Finds their Greatest Common Divisor (GCD) without using built-in functions
+
+
+# num1 = int(input("Enter first number: "))
+# num2 = int(input("Enter second number: "))
+
+# gcd = 1
+
+# for i in range(1, min(num1, num2) + 1):
+#     if num1 % i == 0 and num2 % i == 0:
+#         gcd = i  
+
+# print("GCD of", num1, "and", num2, "is:", gcd)
+
+
+
+
+# Question 60 — Word Frequency Counter (String + Dictionary)
+
+# Write a program that:
+
+# Takes a sentence from the user
+# Counts how many times each word appears
+# Store result in a dictionary
+
+
+
+sentence = input("Enter a sentence: ")
+
+words = sentence.split()
+
+word_count = {}
+
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+print("Word frequencies:", word_count)
