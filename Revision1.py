@@ -1650,16 +1650,68 @@ print("Final list:", items)
 
 
 
-sentence = input("Enter a sentence: ")
+# sentence = input("Enter a sentence: ")
 
-words = sentence.split()
+# words = sentence.split()
 
-word_count = {}
+# word_count = {}
 
-for word in words:
-    if word in word_count:
-        word_count[word] += 1
-    else:
-        word_count[word] = 1
+# for word in words:
+#     if word in word_count:
+#         word_count[word] += 1
+#     else:
+#         word_count[word] = 1
 
-print("Word frequencies:", word_count)
+# print("Word frequencies:", word_count)
+
+
+
+
+
+# Question 61 — Check Whether a Number is Palindrome (Math + Loop)
+
+# Write a program that:
+
+# Takes a number from the user
+# Reverses the number
+# Checks whether the original number and reversed number are same
+
+
+
+
+# num = int(input("Enter a number: "))
+
+# original_num = num
+
+# reversed_num = 0
+
+# while num > 0:
+#     digit = num % 10            
+#     reversed_num = reversed_num * 10 + digit  
+#     num //= 10                    
+
+
+# if original_num == reversed_num:
+#     print(original_num, "is a Palindrome number")
+# else:
+#     print(original_num, "is NOT a Palindrome number")
+
+
+
+
+
+
+# Take two lists from user
+list1 = list(map(int, input("Enter numbers for List 1 (space-separated): ").split()))
+list2 = list(map(int, input("Enter numbers for List 2 (space-separated): ").split()))
+
+intersection = []
+
+for num in list1:
+    if num in list2 and num not in intersection:
+        intersection.append(num)
+
+if intersection:
+    print("Intersection of lists:", intersection)
+else:
+    print("No common elements found.")
