@@ -1701,17 +1701,60 @@ print("Final list:", items)
 
 
 
-# Take two lists from user
-list1 = list(map(int, input("Enter numbers for List 1 (space-separated): ").split()))
-list2 = list(map(int, input("Enter numbers for List 2 (space-separated): ").split()))
+# list1 = list(map(int, input("Enter numbers for List 1 (space-separated): ").split()))
+# list2 = list(map(int, input("Enter numbers for List 2 (space-separated): ").split()))
 
-intersection = []
+# intersection = []
 
-for num in list1:
-    if num in list2 and num not in intersection:
-        intersection.append(num)
+# for num in list1:
+#     if num in list2 and num not in intersection:
+#         intersection.append(num)
 
-if intersection:
-    print("Intersection of lists:", intersection)
+# if intersection:
+#     print("Intersection of lists:", intersection)
+# else:
+#     print("No common elements found.")
+
+
+
+
+# Question 63 — Find LCM of Two Numbers (Math + Logic)
+
+# Write a program that:
+
+# Takes two numbers from the user
+# Finds their Least Common Multiple (LCM) without using built-in functions
+
+
+
+
+# num1 = int(input("Enter first number: "))
+# num2 = int(input("Enter second number: "))
+
+# greater = num1 if num1 > num2 else num2
+
+# while True:
+#     if greater % num1 == 0 and greater % num2 == 0:
+#         lcm = greater
+#         break
+#     greater += 1
+
+# print("Lcm of", num1, "and", num2, "is", lcm)
+
+
+
+number = list(map(int, input("Enter numbers (space-separated): ").split()))
+
+
+is_sorted = True
+
+
+for  i in range(len(numbers) -1):
+    if numbers[i] > numbers[i+1]:
+        is_sorted = False
+        break
+
+if is_sorted:
+    print("The list is sorted in ascending order.")
 else:
-    print("No common elements found.")
+    print("The list is NOT sorted in ascending order.")
