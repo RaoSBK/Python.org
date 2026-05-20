@@ -1743,18 +1743,70 @@ print("Final list:", items)
 
 
 
-number = list(map(int, input("Enter numbers (space-separated): ").split()))
+# number = list(map(int, input("Enter numbers (space-separated): ").split()))
 
 
-is_sorted = True
+# is_sorted = True
 
 
-for  i in range(len(numbers) -1):
-    if numbers[i] > numbers[i+1]:
-        is_sorted = False
-        break
+# for  i in range(len(numbers) -1):
+#     if numbers[i] > numbers[i+1]:
+#         is_sorted = False
+#         break
 
-if is_sorted:
-    print("The list is sorted in ascending order.")
-else:
-    print("The list is NOT sorted in ascending order.")
+# if is_sorted:
+#     print("The list is sorted in ascending order.")
+# else:
+#     print("The list is NOT sorted in ascending order.")
+
+
+
+
+
+
+# text = input("Enter a string: ")
+
+# char_count = {}
+
+# for char in text:
+#     char_count[char] = char_count.get(char, 0) + 1
+
+# first_non_repeating = None
+# for char in text:
+#     if char_count[char] == 1:
+#         first_non_repeating = char
+#         break
+
+# if first_non_repeating:
+#     print("First non-repeating character:", first_non_repeating)
+# else:
+#     print("No non-repeating character found.")
+
+
+
+
+
+
+
+
+# Question 66 — Move All Zeros to End (List Manipulation)
+
+# Write a program that:
+
+# Takes a list of numbers from the user
+# Moves all 0s to the end of the list
+# Keep the order of non-zero elements same
+
+
+
+
+
+numbers = list(map(int, input("Enter numbers (space-separated): ").split()))
+
+result = [num for num in numbers if num != 0]
+
+zero_count = numbers.count(0)
+
+result.extend([0] * zero_count)
+
+print("List after moving zeros to the end:", result)
