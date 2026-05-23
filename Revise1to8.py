@@ -303,10 +303,64 @@ greet("Shivam")
 # 25
 
 
-num = int(input("Enter the number"))
+# num = int(input("Enter the number"))
 
-def find_square(num):
-    return num ** 2
+# def find_square(num):
+#     return num ** 2
 
 
-print(find_square(num))
+# print(find_square(num))
+
+
+# Write a function:
+
+# def check_even_odd(num):
+
+# The function should:
+
+# Accept a number as a parameter
+# Print "Even" if the number is even
+# Print "Odd" if the number is odd
+
+
+
+# Function to check even or odd
+def check_even_odd(num):
+    if num % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")
+
+check_even_odd(10)  
+check_even_odd(7)  
+
+
+
+
+# Question 18 — Maximum of Three Numbers
+
+# Write a function:
+
+# def find_max(a, b, c):
+
+# The function should:
+
+# Accept three numbers
+# Return the largest number
+
+
+
+
+
+def find_max(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+
+# Example usage
+print(find_max(10, 25, 15))   
+print(find_max(7, 3, 9))     
+print(find_max(-5, -2, -8)) 

@@ -298,3 +298,35 @@ def greet_users(names):
 usernames = ['suraj', 'shivam', 'ratan']
 greet_users(usernames)
 
+
+
+def greet_users(names):
+    """print a simple greeting massage to each user in the list"""
+    for name in names:
+        msg = f"Hello, {name.title()}!"
+        print(msg)
+
+usernames = ['hannah', 'ty', 'margot']
+greet_users(usernames)
+
+
+
+#Modifying a list in a function 
+
+
+
+#Start with some designs that need to be printed
+
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+
+while unprinted_designs:
+    current_design = unprinted_designs.pop()
+    print(f"Printing model: {current_design}")
+    completed_models.append(current_design)
+
+# Display all those 
+print("\n The following models have been printed")
+for completed_model in completed_models:
+    print(completed_model)
