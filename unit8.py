@@ -330,3 +330,94 @@ while unprinted_designs:
 print("\n The following models have been printed")
 for completed_model in completed_models:
     print(completed_model)
+
+
+
+
+
+#integrate both code into one code with the help of two functions
+
+
+def print_Models(unprinted_designs, completed_designs):
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print(f"Printing Model: {current_design}")
+        completed_models.append(current_design)
+
+
+def show_completed_models(completed_designs):
+    print("The following models have been printed:")
+    for completed_model in completed_models:
+        print(completed_model)
+
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+print_Models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
+
+
+
+# 8-9. Messages: Make a list containing a series of short text messages. Pass the 
+# list to a function called show_messages(), which prints each text message.
+
+def show_messages(Messages):
+    for Message in Messages:
+        print(f"\nThe text message is {Message}")
+
+
+Messages = ['Good morning', 'good evening', 'bye' 'hi']
+show_messages(Messages)
+
+
+
+
+
+# 8-10. Sending Messages: Start with a copy of your program from Exercise 8-9. 
+# Write a function called send_messages() that prints each text message and 
+# moves each message to a new list called sent_messages as it’s printed. After 
+# calling the function, print both of your lists to make sure the messages were 
+# moved correctly.
+
+
+
+def send_messages(messages, sent_messages):
+    """
+    Prints each message and moves it to sent_messages list.
+    """
+    while messages:  
+        current_message = messages.pop(0)  
+        print(f"Sending message: {current_message}")
+        sent_messages.append(current_message)  
+
+
+messages = ["Hello!", "How are you?", "Python is fun!", "Keep practicing!"]
+
+sent_messages = []
+
+send_messages(messages, sent_messages)
+
+print("\nFinal Messages List:", messages)
+print("Sent Messages List:", sent_messages)
+
+
+
+
+# 8-11. Archived Messages: Start with your work from Exercise 8-10. Call the 
+# function send_messages() with a copy of the list of messages. After calling the 
+# function, print both of your lists to show that the original list has retained its 
+# messages.
+
+def send_messages(messages, sent_messages):
+    while messages:
+        current_message = messages.pop(0)
+        print(f"Sending message: {current_message}")
+        sent_messages.append(current_message)
+
+messages = ["Hello", 'How are you', 'Python is fun', 'Keep practicing']
+sent_messages= []
+send_messages(messages[:], sent_messages)
+
+print("\nFinal Message List: ", messages)
+print("Sent Messages: ", sent_messages)
+
