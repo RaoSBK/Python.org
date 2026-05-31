@@ -1801,12 +1801,87 @@ print("Final list:", items)
 
 
 
-numbers = list(map(int, input("Enter numbers (space-separated): ").split()))
+# numbers = list(map(int, input("Enter numbers (space-separated): ").split()))
 
-result = [num for num in numbers if num != 0]
+# result = [num for num in numbers if num != 0]
 
-zero_count = numbers.count(0)
+# zero_count = numbers.count(0)
 
-result.extend([0] * zero_count)
+# result.extend([0] * zero_count)
 
-print("List after moving zeros to the end:", result)
+# print("List after moving zeros to the end:", result)
+
+
+
+
+# Write a function:
+
+# def factorial(n):
+
+# The function should:
+
+# Accept a number as a parameter
+# Calculate its factorial
+# Return the result
+
+
+def factorial(n):
+    """
+    Calculate the factorial of a number n.
+    :param n: Non-negative integer
+    :return: Factorial of n
+    """
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+
+
+print(factorial(5))
+
+
+
+
+# Question 21 — Student Grade Function
+
+# Write a function:
+
+# def calculate_grade(marks):
+
+# The function should:
+
+# Accept marks as a parameter
+# Return the grade according to:
+
+
+
+
+def calculate_grade(marks):
+    """
+    Return grade based on marks.
+    :param marks: Integer (0–100)
+    :return: Grade as string
+    """
+    if marks >= 90:
+        return "A+"
+    elif marks >= 80:
+        return "A"
+    elif marks >= 70:
+        return "B"
+    elif marks >= 60:
+        return "C"
+    elif marks >= 50:
+        return "D"
+    else:
+        return "F"
+    
+
+print(calculate_grade(95))  
+print(calculate_grade(82)) 
+print(calculate_grade(67))
+print(calculate_grade(45)) 
+
