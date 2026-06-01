@@ -1885,3 +1885,43 @@ print(calculate_grade(82))
 print(calculate_grade(67))
 print(calculate_grade(45)) 
 
+
+
+
+# Question 22 — Reverse a String Using a Function
+# Write a function:
+# def reverse_string(text):
+# The function should:
+# Accept a string as a parameter
+# Return the reversed string
+
+
+
+# def reverse_string(text):
+#     return text[::-1]
+
+
+# word = input("Enter a word: ")
+# print("Reverse string is:", reverse_string(word))
+
+
+
+
+# Question 23 — Count Even Numbers in a List
+# Write a function:
+# def count_even(numbers):
+# The function should:
+# Accept a list of numbers
+# Count how many numbers are even
+# Return the count
+
+
+def count_even(numbers):
+    count = 0
+    for number in numbers:
+        if number %2 ==0:
+            count += 1
+    return count
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8]
+print("Count even numbers", count_even(nums))
