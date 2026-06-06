@@ -1925,3 +1925,44 @@ def count_even(numbers):
 
 nums = [1, 2, 3, 4, 5, 6, 7, 8]
 print("Count even numbers", count_even(nums))
+
+
+# Question 24 — Create a Username Function
+# Write a function:
+# def create_username(first_name, last_name):
+# The function should:
+# Accept first name and last name
+# Create a username by joining them with an underscore (_)
+# Convert the username to lowercase
+# Return the username
+
+
+def create_username(first_name, last_name):
+    username = first_name + "_" + last_name
+    return username.lower()
+
+# Example usage
+print(create_username("Suraj", "Kumar"))  
+print(create_username("Alice", "Smith"))   
+print(create_username("John", "Doe"))      
+
+
+
+
+
+# Question 25 — Sum of List Elements Function
+# Write a function:
+# def calculate_sum(numbers):
+# The function should:
+# Accept a list of numbers
+# Calculate the sum of all elements
+# Return the sum
+
+
+
+def calculate_sum(numbers):
+    return sum(numbers)
+
+print(calculate_sum([1, 2, 3, 4, 5])) 
+print(calculate_sum([10, -2, 8]))       
+print(calculate_sum([]))              
