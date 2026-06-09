@@ -1966,3 +1966,41 @@ def calculate_sum(numbers):
 print(calculate_sum([1, 2, 3, 4, 5])) 
 print(calculate_sum([10, -2, 8]))       
 print(calculate_sum([]))              
+
+
+
+
+# Question 26 — Find the Smallest Number Function
+# Write a function:
+# def find_smallest(numbers):
+# The function should:
+# Accept a list of numbers
+# Find the smallest number
+# Return the smallest number
+
+def find_smallest(numbers):
+    return min(numbers)
+
+
+nums = [12, 5, 20, 4]
+print("The smallest number in the list is", find_smallest(nums))
+
+
+# Question 27 — Palindrome Function
+# Write a function:
+# def is_palindrome(text):
+# The function should:
+# Accept a string
+# Return True if the string is a palindrome
+# Return False otherwise
+
+
+def is_palindrome(text):
+    cleaned = text.replace("","").lower()
+    return cleaned == cleaned[::-1]
+
+
+print(is_palindrome("madam"))      
+print(is_palindrome("racecar"))     
+print(is_palindrome("hello"))      
+print(is_palindrome("A man a plan a canal Panama"))
