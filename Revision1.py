@@ -2004,3 +2004,50 @@ print(is_palindrome("madam"))
 print(is_palindrome("racecar"))     
 print(is_palindrome("hello"))      
 print(is_palindrome("A man a plan a canal Panama"))
+
+
+
+
+# Question 28 — Count Words Function
+# Write a function:
+# def count_words(sentence):
+# The function should:
+# Accept a sentence as a parameter
+# Count the total number of words
+# Return the count
+
+
+
+def count_words(sentence):
+    # Split the sentence into words using spaces
+    words = sentence.split()
+    # Return the total number of words
+    return len(words)
+
+
+print(count_words("Programming is fun"))      
+print(count_words("Hello world from Python"))
+
+
+
+# Question 29 — Find Common Elements Function
+# Write a function:
+# def common_elements(list1, list2):
+# The function should:
+# Accept two lists
+# Find common elements
+# Return them in a new list
+
+
+
+
+def common_elements(list1, list2):
+    result = []
+    for item in list1:
+        if item in list2 and item not in result:
+            result.append(item)
+    return result
+
+# Example usage
+print(common_elements([1, 2, 3, 4], [3, 4, 5, 6]))  
+print(common_elements(["apple", "banana"], ["banana", "cherry"])) 
