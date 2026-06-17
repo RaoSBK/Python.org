@@ -2051,3 +2051,60 @@ def common_elements(list1, list2):
 # Example usage
 print(common_elements([1, 2, 3, 4], [3, 4, 5, 6]))  
 print(common_elements(["apple", "banana"], ["banana", "cherry"])) 
+
+
+
+
+# Question 30 — Student Result Function
+# Write a function:
+# def student_result(marks):
+# The function should:
+# Accept a list of marks
+# Calculate the average marks
+# Return:
+# "Pass" if average ≥ 40
+# "Fail" otherwise
+
+
+
+def student_result(marks):
+    if not marks:
+        return "No marks provided"
+    
+    average = sum(marks)/ len(marks)
+
+    if average >= 40:
+        return "Pass"
+    else:
+        return "fail"
+    
+print(student_result([50, 60, 70]))
+print(student_result([10,10,10]))
+print(student_result([90, 80, 40]))
+
+
+
+# Question 31 — Frequency Counter Function
+# Write a function:
+# def frequency_count(items):
+# The function should:
+# Accept a list
+# Count how many times each element appears
+# Return a dictionary
+
+
+
+def frequency_count(items):
+    freq = {}
+
+    for item in items:
+        if item in freq:
+            freq[item] +=1
+        else:
+            freq[item] = 1
+        
+    return freq
+
+
+print(frequency_count([1, 2, 2, 3, 1, 4, 2]))
+print(frequency_count(["apple", "banana", "apple", "orange", "banana"]))
