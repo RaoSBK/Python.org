@@ -2108,3 +2108,53 @@ def frequency_count(items):
 
 print(frequency_count([1, 2, 2, 3, 1, 4, 2]))
 print(frequency_count(["apple", "banana", "apple", "orange", "banana"]))
+
+
+
+
+# Question 32 — Find Second Largest Number Function
+# Write a function:
+# def second_largest(numbers):
+# The function should:
+# Accept a list of numbers
+# Find the second largest number
+# Return it
+
+
+def second_largest(numbers):
+    unique_numbers = list(set(numbers))
+    
+    if len(unique_numbers) < 2:
+        return None
+    
+    unique_numbers.sort(reverse=True)
+    
+    return unique_numbers[1]
+
+nums = [12, 45, 7, 30, 45]
+print("Second largest number:", second_largest(nums))
+
+
+
+
+# Question 33 — Remove Duplicates Function
+# Write a function:
+# def remove_duplicates(items):
+# The function should:
+# Accept a list
+# Remove duplicate elements
+# Return a new list containing only unique elements
+
+
+
+def remove_duplicates(items):
+    unique_items = []
+    
+    for item in items:
+        if item not in unique_items:
+            unique_items.append(item)
+    
+    return unique_items
+
+data = [4, 2, 7, 4, 9, 2, 4, 7]
+print("List without duplicates:", remove_duplicates(data))
