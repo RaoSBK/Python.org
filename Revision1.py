@@ -2158,3 +2158,58 @@ def remove_duplicates(items):
 
 data = [4, 2, 7, 4, 9, 2, 4, 7]
 print("List without duplicates:", remove_duplicates(data))
+
+
+
+# Question 32 — Find Second Largest Number Function
+# Write a function:
+# def second_largest(numbers):
+# The function should:
+# Accept a list of numbers
+# Find the second largest number
+# Return it
+
+
+
+def second_largest(numbers):
+    unique_numbers = list(set(numbers))
+    
+    # Check if there are at least 2 unique numbers
+    if len(unique_numbers) < 2:
+        return None  # No second largest exists
+    
+    # Sort in descending order
+    unique_numbers.sort(reverse=True)
+    
+    # Return the second largest
+    return unique_numbers[1]
+
+
+nums = [12, 45, 7, 30, 45]
+print("Second largest number is:", second_largest(nums))
+
+
+# Question 33 — Remove Duplicates Function
+# Write a function:
+# def remove_duplicates(items):
+# The function should:
+# Accept a list
+# Remove duplicate elements
+# Return a new list containing only unique elements
+
+
+
+def remove_duplicates(items):
+    # Create a new list to store unique elements
+    unique_items = []
+    
+    for item in items:
+        if item not in unique_items:
+            unique_items.append(item)
+    
+    return unique_items
+
+
+# Example usage:
+data = [4, 2, 7, 4, 9, 2, 4, 7]
+print("List without duplicates:", remove_duplicates(data))
