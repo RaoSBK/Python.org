@@ -2213,3 +2213,75 @@ def remove_duplicates(items):
 # Example usage:
 data = [4, 2, 7, 4, 9, 2, 4, 7]
 print("List without duplicates:", remove_duplicates(data))
+
+
+
+# Question 34 — Merge Two Sorted Lists Function
+# Write a function:
+# def merge_sorted_lists(list1, list2):
+# The function should:
+# Accept two already sorted lists
+# Merge them into a single sorted list
+# Return the new list
+
+
+
+def merge_sorted_lists(list1, list2):
+    merged_list = []
+    i, j = 0, 0
+
+    while i < len(list1) and j < len(list2):
+        if list1[i] <= list2[j]:
+            merged_list.append(list1[i])
+            i += 1
+        else:
+            merged_list.append(list2[j])
+            j += 1
+
+    while i < len(list1):
+        merged_list.append(list1[i])
+        i += 1
+
+    while j < len(list2):
+        merged_list.append(list2[j])
+        j += 1
+
+    return merged_list
+
+
+list1 = [1, 3, 5, 7]
+list2 = [2, 4, 6, 8]
+print("Merged Sorted List:", merge_sorted_lists(list1, list2))
+
+
+
+
+
+
+# Question 35 — Password Validator Function
+# Write a function:
+# def validate_password(password):
+# The function should return True only if:
+# Password length is at least 8 characters
+# Contains at least one digit
+# Contains at least one uppercase letter
+# Otherwise return False.
+
+
+
+
+def validate_password(password):
+    if len(password) < 8:
+        return False
+    
+    has_digit = any(char.isdigit() for char in password)
+    
+    has_upper = any(char.isupper() for char in password)
+    
+    return has_digit and has_upper
+
+
+print(validate_password("Pass1234"))   
+print(validate_password("password"))  
+print(validate_password("PASSWORD1")) 
+print(validate_password("Pass12"))   
