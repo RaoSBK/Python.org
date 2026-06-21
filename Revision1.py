@@ -2351,3 +2351,72 @@ def count_vowels_consonants(text):
 v, c = count_vowels_consonants("Programming is fun")
 print("Vowels:", v)        # Output: 5
 print("Consonants:", c)    # Output: 10
+
+
+
+
+# Question 36 — Most Frequent Element Function
+# Write a function:
+# def most_frequent(numbers):
+# The function should:
+# Accept a list of numbers
+# Find the element that appears the most times
+# Return that element
+
+
+
+# Function to find the most frequent element in a list
+def most_frequent(numbers):
+    frequency = {}
+    
+    # Count occurrences
+    for num in numbers:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1
+    
+    # Find element with maximum frequency
+    max_freq = max(frequency.values())
+    for key, value in frequency.items():
+        if value == max_freq:
+            return key
+
+# Example usage
+print(most_frequent([4, 2, 7, 4, 9, 2, 4, 7]))   # Output: 4
+print(most_frequent([1, 1, 2, 2, 3, 3]))         # Output: 1 (first max found)
+
+
+
+
+
+
+# Question 37 — Count Vowels and Consonants Function
+# Write a function:
+# def count_vowels_consonants(text):
+# The function should:
+# Accept a string
+# Count vowels and consonants separately
+# Return both counts
+
+
+# Function to count vowels and consonants in a string
+def count_vowels_consonants(text):
+    vowels = "aeiouAEIOU"
+    vowel_count = 0
+    consonant_count = 0
+    
+    # Loop through each character
+    for char in text:
+        if char.isalpha():  # Only consider letters
+            if char in vowels:
+                vowel_count += 1
+            else:
+                consonant_count += 1
+    
+    return vowel_count, consonant_count
+
+# Example usage
+v, c = count_vowels_consonants("Programming is fun")
+print("Vowels:", v)        # Output: 5
+print("Consonants:", c)    # Output: 10
