@@ -2420,3 +2420,55 @@ def count_vowels_consonants(text):
 v, c = count_vowels_consonants("Programming is fun")
 print("Vowels:", v)        # Output: 5
 print("Consonants:", c)    # Output: 10
+
+
+
+
+
+# Question 38 — Shopping Cart Total Function
+# Write a function:
+# def calculate_total(prices):
+# The function should:
+# Accept a list of item prices
+# Calculate the total bill
+# Return the total amount
+
+
+def calculate_total(prices):
+    return sum(prices)
+
+print(calculate_total([100, 250, 75]))   # Output: 425
+print(calculate_total([49.99, 19.99, 5])) # Output: 74.98
+print(calculate_total([]))               # Output: 0
+
+
+
+
+# Question 39 — Find Longest Word Function
+# Write a function:
+# def longest_word(words):
+# The function should:
+# Accept a list of words
+# Find the longest word
+# Return that word
+
+
+
+def longest_word(words):
+    # Handle empty list case
+    if not words:
+        return None
+    
+    # Initialize longest word
+    longest = words[0]
+    
+    # Loop through words to find the longest
+    for word in words:
+        if len(word) > len(longest):
+            longest = word
+    return longest
+
+# Example usage
+print(longest_word(["apple", "banana", "cherry", "watermelon"]))  # Output: watermelon
+print(longest_word(["hi", "hello", "hey"]))                       # Output: hello
+print(longest_word([]))                                           # Output: None
