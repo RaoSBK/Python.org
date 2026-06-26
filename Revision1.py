@@ -2472,3 +2472,81 @@ def longest_word(words):
 print(longest_word(["apple", "banana", "cherry", "watermelon"]))  # Output: watermelon
 print(longest_word(["hi", "hello", "hey"]))                       # Output: hello
 print(longest_word([]))                                           # Output: None
+
+
+
+
+# Question 40 — Employee Salary Calculator
+# Write a function:
+# def calculate_salary(hours_worked, hourly_rate):
+# The function should:
+# Accept the number of hours worked and hourly rate.
+# If an employee works more than 40 hours, every extra hour should be paid at 1.5× the hourly rate.
+# Return the total salary.
+
+
+def calcualte_salary(hours_worked, hourly_rate):
+    if hours_worked < 40:
+        salary = hours_worked * hourly_rate
+        return salary
+    else:
+        regular_salary = hourly_rate * 40
+        overTime_hours = hours_worked - 40
+        overTime_salary = overTime_hours * (hourly_rate * 1.5)
+        salary = regular_salary + overTime_salary
+        return salary
+    
+
+
+print(calcualte_salary(35, 70))
+print(calcualte_salary(45, 70))
+
+
+
+
+# Question 41 — Student Report Card
+# Write a function:
+# def student_report(name, marks):
+# The function should:
+# Accept a student's name and a list of marks.
+# Calculate:
+# Total marks
+# Average marks
+# Return a dictionary containing:
+# Student name
+# Total
+# Average
+# Grade
+# Grade Criteria
+# Average	Grade
+# 90+	A
+# 75–89	B
+# 60–74	C
+# 40–59	D
+# Below 40	Fail
+
+
+
+def student_report(name, marks):
+    total = sum(marks)
+    average = total / len(marks)
+
+    if average >= 90:
+        grade = "A"
+    elif average >= 75:
+        grade = "B"
+    elif average >= 60:
+        grade = "C"
+    elif average >= 40:
+        grade = "D"
+    else:
+        grade = "Fail"
+    return {
+        "Name": name,
+        "Total Marks": total,
+        "Average Marks": average,
+        "Grade": grade,
+    }
+
+
+print(student_report("Suraj Bhan", [68,70,90]))
