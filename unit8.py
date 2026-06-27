@@ -421,3 +421,35 @@ send_messages(messages[:], sent_messages)
 print("\nFinal Message List: ", messages)
 print("Sent Messages: ", sent_messages)
 
+
+
+
+#Greet the users
+
+def greet_users(names):
+    """Print the simple greeting to each users in the following lsit """
+    for name in names:
+        msg = f"Hello, {name.title()}"
+        print(msg)
+
+
+usernames  = ['suraj bhan', 'RAhul', 'shivam']
+greet_users(usernames)
+
+
+
+
+#Printing models
+
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+while unprinted_designs:
+    current_design = unprinted_designs.pop()
+    print(f"Printing model: {current_design}")
+    completed_models.append(current_design)
+
+
+print("\nThe following models have been printed:")
+for completed_model in completed_models:
+    print(completed_model)
+
