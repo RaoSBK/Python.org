@@ -147,4 +147,20 @@ unit 8
         the parameter name as it  is then we pass the value in, this help us to reduces the confusiion in the error
 
     Default values :- it set the one argument as same for the funciton and one is change ( see in the line no 63-68)
+
+
+
+
+unit 9 
+    Class 
+    class is a blue print for the creating objects
+    process of creating the classes
+    -> so if i want to create it then firstly i want to create the class and then i need to make the object 
+    of the class then i am able to use that class 
+
+    Constructor
+    All classes have a funciton called _init_(), which is always executed when the object is being initiated.
+
+    the variables which are stored into the classes that all are refer as attributes
+    
         
