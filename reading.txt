@@ -163,4 +163,11 @@ unit 9
 
     the variables which are stored into the classes that all are refer as attributes
     
+
+    attributes: 
+        attributes are variables or methods tied to an object. They describes the object properties or behavior
+
+
+    Methods:
+        Methods are functions that belongs to objects
         
