@@ -218,3 +218,50 @@ print()
 
 for index, fruit in enumerate(fruits, start=1):
     print(f"Items {index} -> {fruit}")
+
+
+
+
+#Functions and keywords Argument
+
+#Basic function defination with return value
+
+def add(a,b):
+    return a+b
+
+
+def greet_name(name):
+    return f"Hello, {name}"
+
+print(add(4,7))
+print(greet_name("suraj"))
+
+
+
+#example: 2
+#Default parameters and keywords arguments
+def describe_student(name, course= "Btech cse", year = 3):
+    return f"{name}, is in the year {year}, of course {course}"
+
+print(describe_student("Suraj"))
+print(describe_student("Suraj", year = 3))
+print(describe_student("Suraj", course="Btech AI ML"))
+
+
+
+
+
+#Example: 03
+# *args and *kwargs for flexible function for signatures
+
+def total_marks(*score):
+    return sum(score)
+
+
+def student_profile(**details):
+    for key, value in details.items():
+        print(f"{key}: {value}")
+
+
+print("Total: ", total_marks(88,99,33,44))
+student_profile(name ="suraj", branch= 'AI ML', year = 3)
