@@ -265,3 +265,36 @@ def student_profile(**details):
 
 print("Total: ", total_marks(88,99,33,44))
 student_profile(name ="suraj", branch= 'AI ML', year = 3)
+
+
+
+#Module imports and dot notaions
+#Eg: 1  importing a standard library module and using dot dot notiations 
+
+import math
+print(math.sqrt(64))    #square root via dot notations 
+print(math.pi)          #accessing a contant 
+print(math.factorial(5))
+
+
+
+#Eg:2   Import with an alias and importing a specific names
+import random as rnd
+from datetime import date
+
+
+print(rnd.randint(1, 100))     #print random value from the 1 to 100
+print(rnd.choice(["head", "tails"]))
+print("Todays date: ", date.today())
+
+
+#Eg:3   Checking what a module contains, and importing multiple names at once
+
+import statistics
+from math import ceil, floor
+
+
+data = [12, 45, 23, 67, 34]
+print("Mean:", statistics.mean(data))
+print("Median:", statistics.median(data))
+print("ceil(4.2):", ceil(4.2), "| floor(4.8): ", floor(4.8))
