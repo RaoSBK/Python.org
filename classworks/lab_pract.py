@@ -298,3 +298,95 @@ data = [12, 45, 23, 67, 34]
 print("Mean:", statistics.mean(data))
 print("Median:", statistics.median(data))
 print("ceil(4.2):", ceil(4.2), "| floor(4.8): ", floor(4.8))
+
+
+
+
+
+#NumPy and Arrays
+#Eg:01  Creating numpy arrays and checking its properties
+
+import numpy as np
+
+array1d = np.array([1,2,3,4,5])
+array2d = np.array([[1,2,3], [4,5,6]])
+
+
+print("1 D array:", array1d )
+print("2D array: ", array2d)
+
+print("Shape of your 2D array", array2d.shape)
+print("Data type: ", array1d.dtype) 
+
+
+
+#Eg:02      Vectorized arithmetic (no explicit loop needed)
+a = np.array([10,20,30,40])
+b = np.array([1,2,3,4])
+
+
+print("a+b:", a+b)
+print("a*b:", a*b)
+print("a**b:", a**b )
+print("Mean of a: ", a.mean())
+print("Element which is greater than 15: ", a[a>15])        #boolean indexing
+
+
+
+#Eg:03      Useful array-creation helpers and reshaping 
+
+zeros = np.zeros((2,3))
+ones = np.ones((3, ))
+
+range_arr = np.arange(0,10,20)
+linspace_arr = np.linspace(0,1,5)
+
+print("Zeros:\n ", zeros)
+print("Ones: ", ones)
+print("Linspace: ", linspace_arr)
+print("Reshaped 1..6 into 2*3\n", np.arange(1,7).reshape(2,3))
+
+
+
+
+# Objects and Methods --Then it all clicks
+#Eg:01  Defining a simple class with attribute and a method
+
+
+class Student:
+    def __init__(self, name, branch, gpa):
+        self.name = name
+        self.branch = branch 
+        self.gpa = gpa
+
+
+    def Summary(self):      #instance method
+        return f"{self.name} branch ({self.branch} gpa ({self.gpa}))"
+    
+
+s1 = Student("Suraj", "Ai Ml", 8.7)
+print(s1.Summary())
+print(s1.name, s1.branch, s1.gpa)
+
+
+
+#Eg:02      Adding a method that change the object's own state
+class Bank_Accounnt:
+    def __init__(self, owner, balance = 0):
+        self.owner = owner
+        self.balance = balance 
+
+    def deposit(self, amount):
+        self.balance += amount
+        return self.balance
+    
+    def withdraw(self, amount):
+        if amount > self.balance:
+            return "Insufficient Balance"
+        
+        self.balance -= amount
+        return self.balance
+    
+
+acc = Bank_Accounnt("Suraj Bhan", 100000)
+print
