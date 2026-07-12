@@ -389,4 +389,26 @@ class Bank_Accounnt:
     
 
 acc = Bank_Accounnt("Suraj Bhan", 100000)
-print
+print("Initial Ballance", acc.balance)
+print("After deposite:", acc.deposit(500))
+print("After Withdrawl", acc.withdraw(200))
+
+
+
+#Example: 03   Everything is an object --built-in type also have a classes and methods
+
+print(type(42))                 #<class 'int'>
+print(type("Hello"))            #<class 'str'>
+print(type([1,2,3]))            #<class 'list'>
+print(type(np.array([1,2])))    #<calss 'numpy.ndarray'>
+
+
+#This is why the dot notations works the same way everywhere:
+
+text = "Python"
+data = [4,3,5]
+
+print(text.upper())
+print(sorted(data))
+data.sort()
+print(data)
