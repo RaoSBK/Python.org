@@ -2550,3 +2550,101 @@ def student_report(name, marks):
 
 
 print(student_report("Suraj Bhan", [68,70,90]))
+
+
+
+# Problem 42 — Library Book Management System
+
+# Write a program using functions that manages a small library.
+
+
+# Library Book Management System
+
+library = []  # Global list to store books
+
+# Function to add a book
+def add_book(book_id, title, author):
+    book = {"ID": book_id, "Title": title, "Author": author, "Available": True}
+    library.append(book)
+    print(f"Book '{title}' added successfully!")
+
+# Function to display all books
+def display_books():
+    if not library:
+        print("No books in the library.")
+    else:
+        print("\n--- Library Books ---")
+        for book in library:
+            status = "Available" if book["Available"] else "Issued"
+            print(f"ID: {book['ID']} | Title: {book['Title']} | Author: {book['Author']} | Status: {status}")
+
+# Function to issue a book
+def issue_book(book_id):
+    for book in library:
+        if book["ID"] == book_id:
+            if book["Available"]:
+                book["Available"] = False
+                print(f"Book '{book['Title']}' issued successfully!")
+            else:
+                print("Sorry, this book is already issued.")
+            return
+    print("Book not found!")
+
+# Function to return a book
+def return_book(book_id):
+    for book in library:
+        if book["ID"] == book_id:
+            if not book["Available"]:
+                book["Available"] = True
+                print(f"Book '{book['Title']}' returned successfully!")
+            else:
+                print("This book was not issued.")
+            return
+    print("Book not found!")
+
+# Function to search for a book
+def search_book(title):
+    found = False
+    for book in library:
+        if book["Title"].lower() == title.lower():
+            status = "Available" if book["Available"] else "Issued"
+            print(f"Found: ID: {book['ID']} | Title: {book['Title']} | Author: {book['Author']} | Status: {status}")
+            found = True
+    if not found:
+        print("Book not found!")
+
+def menu():
+    while True:
+        print("\n--- Library Menu ---")
+        print("1. Add Book")
+        print("2. Display Books")
+        print("3. Issue Book")
+        print("4. Return Book")
+        print("5. Search Book")
+        print("6. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            book_id = input("Enter Book ID: ")
+            title = input("Enter Book Title: ")
+            author = input("Enter Author Name: ")
+            add_book(book_id, title, author)
+        elif choice == "2":
+            display_books()
+        elif choice == "3":
+            book_id = input("Enter Book ID to issue: ")
+            issue_book(book_id)
+        elif choice == "4":
+            book_id = input("Enter Book ID to return: ")
+            return_book(book_id)
+        elif choice == "5":
+            title = input("Enter Book Title to search: ")
+            search_book(title)
+        elif choice == "6":
+            print("Exiting Library System. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+menu()
