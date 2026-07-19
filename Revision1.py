@@ -2558,9 +2558,8 @@ print(student_report("Suraj Bhan", [68,70,90]))
 # Write a program using functions that manages a small library.
 
 
-# Library Book Management System
 
-library = []  # Global list to store books
+library = []  
 
 # Function to add a book
 def add_book(book_id, title, author):
