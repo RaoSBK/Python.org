@@ -2647,3 +2647,89 @@ def menu():
             print("Invalid choice. Please try again.")
 
 menu()
+
+
+
+# Problem 44 — Student Management System
+# Write a program using functions to manage student records.
+# Requirements
+# Create the following functions:
+# 1. Add Student
+# def add_student(students, roll_no, name, marks):
+
+
+# Function to add a student
+def add_student(students, roll_no, name, marks):
+    # Check if roll number already exists
+    for student in students:
+        if student['roll_no'] == roll_no:
+            print("Error: Roll number already exists!")
+            return students
+    
+    # Add new student record
+    students.append({
+        'roll_no': roll_no,
+        'name': name,
+        'marks': marks
+    })
+    print(f"Student {name} added successfully!")
+    return students
+
+
+# Function to display all students
+def display_students(students):
+    if not students:
+        print("No student records found.")
+        return
+    print("\n--- Student Records ---")
+    for student in students:
+        print(f"Roll No: {student['roll_no']}, Name: {student['name']}, Marks: {student['marks']}")
+
+
+# Function to search student by roll number
+def search_student(students, roll_no):
+    for student in students:
+        if student['roll_no'] == roll_no:
+            print(f"Found: Roll No: {student['roll_no']}, Name: {student['name']}, Marks: {student['marks']}")
+            return student
+    print("Student not found.")
+    return None
+
+
+# Function to update student marks
+def update_marks(students, roll_no, new_marks):
+    for student in students:
+        if student['roll_no'] == roll_no:
+            student['marks'] = new_marks
+            print(f"Marks updated for {student['name']}.")
+            return students
+    print("Student not found.")
+    return students
+
+
+# Function to delete a student
+def delete_student(students, roll_no):
+    for student in students:
+        if student['roll_no'] == roll_no:
+            students.remove(student)
+            print(f"Student with Roll No {roll_no} deleted.")
+            return students
+    print("Student not found.")
+    return students
+
+
+# --- Example Usage ---
+students = []
+
+students = add_student(students, 1, "Alice", 85)
+students = add_student(students, 2, "Bob", 90)
+
+display_students(students)
+
+search_student(students, 1)
+
+students = update_marks(students, 2, 95)
+
+students = delete_student(students, 1)
+
+display_students(students)
