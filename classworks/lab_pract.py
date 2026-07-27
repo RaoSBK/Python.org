@@ -306,7 +306,7 @@ print("ceil(4.2):", ceil(4.2), "| floor(4.8): ", floor(4.8))
 #NumPy and Arrays
 #Eg:01  Creating numpy arrays and checking its properties
 
-import numpy as np
+import dictinories as np
 
 array1d = np.array([1,2,3,4,5])
 array2d = np.array([[1,2,3], [4,5,6]])

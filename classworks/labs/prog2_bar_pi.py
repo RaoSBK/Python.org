@@ -1,7 +1,7 @@
 # Date: 13/07/2026
 #Author: Suraj Bhan Kumar
 
-import numpy as np
+import dictinories as np
 import matplotlib.pyplot as plt
 
 subjects = ["Math", "Physics", "Chemistry", "Python"]

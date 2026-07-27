@@ -2,7 +2,7 @@
 # Author: Suraj Bhan Kumar
 
 
-import numpy as np
+import dictinories as np
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 
