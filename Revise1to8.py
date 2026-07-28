@@ -364,3 +364,47 @@ def find_max(a, b, c):
 print(find_max(10, 25, 15))   
 print(find_max(7, 3, 9))     
 print(find_max(-5, -2, -8)) 
+
+
+
+
+
+# Question 45 — Employee Attendance Tracker
+# Write a function:
+# def attendance_report(attendance):
+# The function should:
+# Accept a dictionary where:
+# Key = Employee Name
+# Value = Number of days present (out of 30)
+# Calculate the attendance percentage for each employee.
+# Print whether the employee is:
+# Excellent (≥ 90%)
+# Good (75%–89%)
+# Needs Improvement (< 75%)
+
+
+def attendance_report(attendance):
+    for employee, days_present in attendance.items():
+        # Calculate attendance percentage
+        percentage = (days_present / 30) * 100
+
+        # Determine category
+        if percentage >= 90:
+            status = "Excellent"
+        elif 75 <= percentage < 90:
+            status = "Good"
+        else:
+            status = "Needs Improvement"
+
+        # Print report
+        print(f"{employee}: {percentage:.2f}% - {status}")
+
+
+attendance_data = {
+    "Alice": 28,
+    "Bob": 23,
+    "Charlie": 30,
+    "Diana": 20
+}
+
+attendance_report(attendance_data)
