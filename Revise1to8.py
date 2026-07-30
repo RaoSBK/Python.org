@@ -408,3 +408,51 @@ attendance_data = {
 }
 
 attendance_report(attendance_data)
+
+
+
+
+
+# Question 47 — Inventory Management System
+# Write a function:
+# def update_inventory(inventory, item, quantity):
+# Requirements
+# inventory is a dictionary where:
+# Key = Item name
+# Value = Quantity available
+# If the item already exists, increase its quantity by the given amount.
+# If the item does not exist, add it to the inventory with the given quantity.
+# Return the updated inventory.
+
+
+
+
+
+def update_inventory(inventory, item, quantity):
+    """
+    Updates the inventory dictionary with the given item and quantity.
+
+    Parameters:
+    inventory (dict): Current inventory with item names as keys and quantities as values.
+    item (str): The item name to update or add.
+    quantity (int): The quantity to add.
+
+    Returns:
+    dict: Updated inventory dictionary.
+    """
+    if item in inventory:
+        inventory[item] += quantity
+    else:
+        inventory[item] = quantity
+    return inventory
+
+
+
+# Initial inventory
+inventory = {"apple": 10, "banana": 5}
+
+# Update existing item
+print(update_inventory(inventory, "apple", 3))
+
+# Add new item
+print(update_inventory(inventory, "orange", 7))
