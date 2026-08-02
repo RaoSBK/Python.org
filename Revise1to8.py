@@ -456,3 +456,60 @@ print(update_inventory(inventory, "apple", 3))
 
 # Add new item
 print(update_inventory(inventory, "orange", 7))
+
+
+
+
+
+
+# #classes
+
+# Question 2 – Class with Attributes
+# Create a class named Car.
+# Add the following attributes:
+# brand
+# model
+# year
+# Create an object and print all the details.
+# Example Output:
+# Brand : Toyota
+# Model : Fortuner
+# Year : 2024
+
+
+class Car:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+
+    def display_details(self):
+        print("Brand: ", self.brand)
+        print("Model: ", self.model)
+        print("Year: ", self.year)
+
+
+my_car = Car("BMW", "X5", 2024)
+
+
+my_car.display_details()
+
+
+
+
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+
+    def display_detials(self):
+        print("Name: ", self.name)
+        print("salry: ", self.salary)
+
+
+
+emp1 = Employee("john Doe", 50000)
+
+emp1.display_detials()
