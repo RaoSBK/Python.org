@@ -513,3 +513,55 @@ class Employee:
 emp1 = Employee("john Doe", 50000)
 
 emp1.display_detials()
+
+
+
+
+
+# Question
+# Create a class named Student that stores the student's name, roll number, and marks. Implement the following methods:
+# accept_data() – Accept student details from the user.
+# display_data() – Display the student's details.
+# calculate_grade() – Calculate and display the grade based on the marks using the following criteria:
+# Marks ≥ 90 → Grade A
+# Marks ≥ 75 and < 90 → Grade B
+# Marks ≥ 60 and < 75 → Grade C
+# Marks ≥ 40 and < 60 → Grade D
+# Marks < 40 → Grade F
+
+
+class Student:
+    def __init__(self):
+        self.name = ""
+        self.roll_number = ""
+        self.marks = 0
+
+    def accept_data(self):
+        self.name = input("Enter student name: ")
+        self.roll_number = input("Enter roll number: ")
+        self.marks = float(input("Enter marks: "))
+
+    def display_data(self):
+        print("\n--- Student Details ---")
+        print(f"Name: {self.name}")
+        print(f"Roll Number: {self.roll_number}")
+        print(f"Marks: {self.marks}")
+
+    def calculate_grade(self):
+        if self.marks >= 90:
+            grade = "A"
+        elif self.marks >= 75:
+            grade = "B"
+        elif self.marks >= 60:
+            grade = "C"
+        elif self.marks >= 40:
+            grade = "D"
+        else:
+            grade = "F"
+        print(f"Grade: {grade}")
+
+
+student1 = Student()
+student1.accept_data()
+student1.display_data()
+student1.calculate_grade()
