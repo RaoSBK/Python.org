@@ -2734,3 +2734,96 @@ students = delete_student(students, 1)
 
 display_students(students)
 
+
+
+
+
+
+# Question 11 — Library Management System (Classes)
+
+# Write a class named:
+
+# Library
+# The class should have:
+# Attributes
+# library_name
+# books (a list to store book names)
+# Methods
+# add_book(book_name)
+# Adds a new book to the library.
+# remove_book(book_name)
+# Removes the book if it exists.
+
+# If the book is not found, print:
+
+# Book not found.
+# search_book(book_name)
+# Checks whether the book is available.
+
+# If found:
+
+# Book is available.
+
+# Otherwise:
+
+# Book is not available.
+# display_books()
+# Displays all the books currently available in the library.
+
+
+
+
+class Library:
+    def __init(self, library_name):
+        self.library_name = library_name
+        self.books = []
+
+    def add_books(self, book_name):
+        self.books.append(book_name)
+        print(f"{book_name} has been added to {self.library_name}. ")
+
+    def remove_book(self, book_name):
+        if book_name in self.books:
+            self.books.remove(book_name)
+            print(f'"{book_name}" has been removed from {self.library_name}.')
+        else:
+            print("Book not found")
+
+    def search_book(self, book_name):
+        if book_name in self.books:
+            print("Book is available.")
+        else:
+            print("Book is not available.")
+
+    def display_books(self):
+        if self.books:
+            print(f"Books available in {self.library_name}:")
+            for book in self.books:
+                print(f"- {book}")
+        else:
+            print("No books available in the library.")
+
+
+
+
+# Create a library
+my_library = Library("City Library")
+
+# Add books
+my_library.add_book("Python Programming")
+my_library.add_book("Data Structures in Java")
+my_library.add_book("Operating System Concepts")
+
+# Display books
+my_library.display_books()
+
+# Search for a book
+my_library.search_book("Python Programming")
+my_library.search_book("C++ Basics")
+
+# Remove a book
+my_library.remove_book("Data Structures in Java")
+my_library.remove_book("C++ Basics")
+
+# Display books again
+my_library.display_books()
