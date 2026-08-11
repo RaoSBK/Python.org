@@ -530,38 +530,91 @@ emp1.display_detials()
 # Marks < 40 → Grade F
 
 
-class Student:
-    def __init__(self):
-        self.name = ""
-        self.roll_number = ""
-        self.marks = 0
+# class Student:
+#     def __init__(self):
+#         self.name = ""
+#         self.roll_number = ""
+#         self.marks = 0
 
-    def accept_data(self):
-        self.name = input("Enter student name: ")
-        self.roll_number = input("Enter roll number: ")
-        self.marks = float(input("Enter marks: "))
+#     def accept_data(self):
+#         self.name = input("Enter student name: ")
+#         self.roll_number = input("Enter roll number: ")
+#         self.marks = float(input("Enter marks: "))
 
-    def display_data(self):
-        print("\n--- Student Details ---")
-        print(f"Name: {self.name}")
-        print(f"Roll Number: {self.roll_number}")
-        print(f"Marks: {self.marks}")
+#     def display_data(self):
+#         print("\n--- Student Details ---")
+#         print(f"Name: {self.name}")
+#         print(f"Roll Number: {self.roll_number}")
+#         print(f"Marks: {self.marks}")
 
-    def calculate_grade(self):
-        if self.marks >= 90:
-            grade = "A"
-        elif self.marks >= 75:
-            grade = "B"
-        elif self.marks >= 60:
-            grade = "C"
-        elif self.marks >= 40:
-            grade = "D"
-        else:
-            grade = "F"
-        print(f"Grade: {grade}")
+#     def calculate_grade(self):
+#         if self.marks >= 90:
+#             grade = "A"
+#         elif self.marks >= 75:
+#             grade = "B"
+#         elif self.marks >= 60:
+#             grade = "C"
+#         elif self.marks >= 40:
+#             grade = "D"
+#         else:
+#             grade = "F"
+#         print(f"Grade: {grade}")
 
 
-student1 = Student()
-student1.accept_data()
-student1.display_data()
-student1.calculate_grade()
+# student1 = Student()
+# student1.accept_data()
+# student1.display_data()
+# student1.calculate_grade()
+
+
+
+
+# Question 12 — Car Class with Methods
+# Create a class named Car.
+# Requirements
+# The class should have these attributes:
+# brand
+# model
+# speed
+
+
+
+
+class Car:
+    def __init__(self, brand, model, speed=0):
+        self.brand = brand
+        self.model = model
+        self.speed = speed
+
+    def accelerate(self, increment):
+        """Increase the car's speed by a given amount."""
+        self.speed += increment
+        print(f"{self.brand} {self.model} accelerated to {self.speed} km/h.")
+
+    def brake(self, decrement):
+        """Decrease the car's speed by a given amount, not below 0."""
+        self.speed = max(0, self.speed - decrement)
+        print(f"{self.brand} {self.model} slowed down to {self.speed} km/h.")
+
+    def honk(self):
+        """Make the car honk."""
+        print(f"{self.brand} {self.model} says: Beep Beep!")
+
+    def display_info(self):
+        """Show car details."""
+        print(f"Car: {self.brand} {self.model}, Speed: {self.speed} km/h")
+
+
+
+# Create a Car object
+my_car = Car("Toyota", "Corolla")
+
+# Display info
+my_car.display_info()
+
+# Accelerate and brake
+my_car.accelerate(50)
+my_car.brake(20)
+
+# Honk
+my_car.honk()
