@@ -670,3 +670,50 @@ account1.display_info()
 account1.deposit(1500)
 account1.withdraw(2000)
 account1.display_info()
+
+
+
+
+
+# Question 14 — Employee Class with Salary Calculation
+
+# Create a class named:
+
+# Employee
+# Requirements
+
+# The class should have these attributes:
+
+# name
+# employee_id
+# basic_salary
+
+
+class Employee:
+    def __init__(self, name, employee_id, basic_salary):
+        self.name = name
+        self.employee_id = employee_id
+        self.basic_salary = basic_salary
+
+    def calculate_salary(self):
+        """
+        Calculates total salary including allowances:
+        - HRA = 40% of basic salary
+        - DA = 20% of basic salary
+        - Total Salary = Basic + HRA + DA
+        """
+        hra = 0.40 * self.basic_salary
+        da = 0.20 * self.basic_salary
+        total_salary = self.basic_salary + hra + da
+        return total_salary
+
+    def display_employee_details(self):
+        print(f"Employee Name: {self.name}")
+        print(f"Employee ID: {self.employee_id}")
+        print(f"Basic Salary: {self.basic_salary}")
+        print(f"Total Salary: {self.calculate_salary()}")
+
+
+# Example usage
+emp1 = Employee("Suraj Bhan", 101, 30000)
+emp1.display_employee_details()
