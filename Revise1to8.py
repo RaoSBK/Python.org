@@ -717,3 +717,56 @@ class Employee:
 # Example usage
 emp1 = Employee("Suraj Bhan", 101, 30000)
 emp1.display_employee_details()
+
+
+
+
+
+# Question 15 — ShoppingCart Class
+
+# Create a class named:
+
+# ShoppingCart
+# Requirements
+
+# The class should have:
+
+# customer_name
+# items — a list containing product names and prices
+
+
+
+
+class ShoppingCart:
+    def __init__(self, customer_name):
+        # Initialize customer name and empty list of items
+        self.customer_name = customer_name
+        self.items = []  # Each item will be stored as a tuple (product_name, price)
+
+    def add_item(self, product_name, price):
+        # Add a product with its price to the cart
+        self.items.append((product_name, price))
+
+    def display_cart(self):
+        # Show all items in the cart
+        print(f"Shopping Cart for {self.customer_name}:")
+        if not self.items:
+            print("Your cart is empty.")
+        else:
+            for product, price in self.items:
+                print(f"- {product}: ₹{price}")
+
+    def calculate_total(self):
+        # Calculate the total price of all items
+        total = sum(price for _, price in self.items)
+        return total
+
+
+# Example usage
+cart = ShoppingCart("Suraj")
+cart.add_item("Laptop", 55000)
+cart.add_item("Mouse", 1200)
+cart.add_item("Keyboard", 2500)
+
+cart.display_cart()
+print("Total Bill: ₹", cart.calculate_total())
