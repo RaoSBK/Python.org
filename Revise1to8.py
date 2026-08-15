@@ -770,3 +770,56 @@ cart.add_item("Keyboard", 2500)
 
 cart.display_cart()
 print("Total Bill: ₹", cart.calculate_total())
+
+
+
+
+# Question 16 — Product Class with Inventory Management
+
+# Create a class named:
+
+# Product
+# Requirements
+
+# The class should have these attributes:
+
+# name
+# price
+# quantity
+
+
+class Product:
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+
+    def display_product(self):
+        print(f"Product Name: {self.name}")
+        print(f"Price: ₹{self.price}")
+        print(f"Quantity: {self.quantity}")
+
+    def add_stock(self, amount):
+        self.quantity += amount
+        print(f"{amount} units added. New quantity: {self.quantity}")
+
+    def remove_stock(self, amount):
+        if amount <= self.quantity:
+            self.quantity -= amount
+            print(f"{amount} units removed. Remaining quantity: {self.quantity}")
+        else:
+            print("Error: Not enough stock available!")
+
+    def calculate_value(self):
+        total_value = self.price * self.quantity
+        print(f"Total inventory value of {self.name}: ₹{total_value}")
+        return total_value
+
+
+# Example usage
+product1 = Product("Laptop", 50000, 10)
+
+product1.display_product()
+product1.add_stock(5)
+product1.remove_stock(3)
+product1.calculate_value()
