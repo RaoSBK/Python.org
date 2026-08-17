@@ -823,3 +823,62 @@ product1.display_product()
 product1.add_stock(5)
 product1.remove_stock(3)
 product1.calculate_value()
+
+
+
+
+
+# Question 17 — Student Class with Result Analysis
+
+# Create a class named:
+
+# Student
+# Requirements
+
+# The class should have these attributes:
+
+# name
+# roll_no
+# marks — a list containing marks for 5 subjects
+
+
+
+
+class Student:
+    def __init__(self, name, roll_no, marks):
+        self.name = name
+        self.roll_no = roll_no
+        self.marks = marks  # list of 5 subject marks
+
+    def total_marks(self):
+        return sum(self.marks)
+
+    def average_marks(self):
+        return self.total_marks() / len(self.marks)
+
+    def calculate_grade(self):
+        avg = self.average_marks()
+        if avg >= 90:
+            return "A"
+        elif avg >= 75:
+            return "B"
+        elif avg >= 60:
+            return "C"
+        elif avg >= 40:
+            return "D"
+        else:
+            return "F"
+
+    def display_result(self):
+        print("\n--- Student Result ---")
+        print(f"Name: {self.name}")
+        print(f"Roll No: {self.roll_no}")
+        print(f"Marks: {self.marks}")
+        print(f"Total Marks: {self.total_marks()}")
+        print(f"Average Marks: {self.average_marks():.2f}")
+        print(f"Grade: {self.calculate_grade()}")
+
+
+# Example usage
+student1 = Student("Suraj Bhan", "101", [85, 90, 78, 88, 92])
+student1.display_result()
