@@ -882,3 +882,75 @@ class Student:
 # Example usage
 student1 = Student("Suraj Bhan", "101", [85, 90, 78, 88, 92])
 student1.display_result()
+
+
+
+
+
+
+# Question 18 — Restaurant Class with Order Management
+
+# Create a class named:
+
+# Restaurant
+# Requirements
+
+# The class should have these attributes:
+
+# name
+# menu — a dictionary containing item names and prices
+# orders — a list to store ordered items
+
+
+
+
+class Restaurant:
+    def __init__(self, name, menu):
+        self.name = name
+        self.menu = menu  # dictionary {item: price}
+        self.orders = []  # list to store ordered items
+
+    def display_menu(self):
+        print(f"\n--- {self.name} Menu ---")
+        for item, price in self.menu.items():
+            print(f"{item}: ₹{price}")
+
+    def add_order(self, item_name):
+        if item_name in self.menu:
+            self.orders.append(item_name)
+            print(f"Order added: {item_name}")
+        else:
+            print("Item not found in menu.")
+
+    def display_orders(self):
+        if not self.orders:
+            print("No orders yet.")
+            return
+        print("\n--- Current Orders ---")
+        for item in self.orders:
+            print(item)
+
+    def calculate_bill(self):
+        total = sum(self.menu[item] for item in self.orders)
+        print(f"\nTotal Bill: ₹{total}")
+        return total
+
+
+# --- Example Usage ---
+menu = {
+    "Pizza": 250,
+    "Burger": 150,
+    "Pasta": 200,
+    "Coffee": 100
+}
+
+restaurant = Restaurant("Foodie's Delight", menu)
+
+restaurant.display_menu()
+
+restaurant.add_order("Pizza")
+restaurant.add_order("Coffee")
+restaurant.add_order("Ice Cream")  # not in menu
+
+restaurant.display_orders()
+restaurant.calculate_bill()
