@@ -954,3 +954,93 @@ restaurant.add_order("Ice Cream")  # not in menu
 
 restaurant.display_orders()
 restaurant.calculate_bill()
+
+
+
+
+
+
+# Question 19 — Bank Class with Multiple Accounts
+
+# Create a class named:
+
+# Bank
+
+# The class should manage multiple bank accounts using a dictionary.
+
+# Requirements
+
+# The class should have:
+
+# bank_name
+# accounts — a dictionary where:
+# Key = Account number
+# Value = Account holder name and balance
+
+
+
+class Bank:
+    def __init__(self, bank_name):
+        self.bank_name = bank_name
+        self.accounts = {}  # Key = account number, Value = dict with holder & balance
+
+    def add_account(self, account_number, account_holder, balance=0.0):
+        if account_number not in self.accounts:
+            self.accounts[account_number] = {"holder": account_holder, "balance": balance}
+            print(f"Account {account_number} created for {account_holder} with balance {balance}.")
+        else:
+            print("Account number already exists!")
+
+    def deposit(self, account_number, amount):
+        if account_number in self.accounts:
+            if amount > 0:
+                self.accounts[account_number]["balance"] += amount
+                print(f"Deposited {amount} to {account_number}. New balance: {self.accounts[account_number]['balance']}")
+            else:
+                print("Deposit amount must be positive.")
+        else:
+            print("Account not found!")
+
+    def withdraw(self, account_number, amount):
+        if account_number in self.accounts:
+            if 0 < amount <= self.accounts[account_number]["balance"]:
+                self.accounts[account_number]["balance"] -= amount
+                print(f"Withdrew {amount} from {account_number}. New balance: {self.accounts[account_number]['balance']}")
+            else:
+                print("Invalid withdrawal amount or insufficient funds.")
+        else:
+            print("Account not found!")
+
+    def display_account(self, account_number):
+        if account_number in self.accounts:
+            acc = self.accounts[account_number]
+            print(f"Account Number: {account_number}")
+            print(f"Account Holder: {acc['holder']}")
+            print(f"Balance: {acc['balance']}")
+        else:
+            print("Account not found!")
+
+    def display_all_accounts(self):
+        if self.accounts:
+            print(f"\n--- {self.bank_name} Accounts ---")
+            for acc_num, acc_info in self.accounts.items():
+                print(f"Account Number: {acc_num} | Holder: {acc_info['holder']} | Balance: {acc_info['balance']}")
+        else:
+            print("No accounts available.")
+
+
+
+# Create a bank
+my_bank = Bank("Suraj Bank")
+
+# Add accounts
+my_bank.add_account("101", "Suraj Bhan", 5000)
+my_bank.add_account("102", "Amit Kumar", 3000)
+
+# Perform operations
+my_bank.deposit("101", 2000)
+my_bank.withdraw("102", 1000)
+
+# Display accounts
+my_bank.display_account("101")
+my_bank.display_all_accounts()
