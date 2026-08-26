@@ -1044,3 +1044,102 @@ my_bank.withdraw("102", 1000)
 # Display accounts
 my_bank.display_account("101")
 my_bank.display_all_accounts()
+
+
+
+
+
+# Question 20 — Hospital Class with Patient Management
+
+# Create a class named:
+
+# Hospital
+
+# The class should manage multiple patients.
+
+# Requirements
+
+# The class should have:
+
+# hospital_name
+# patients — a dictionary where:
+# Key = Patient ID
+# Value = patient details
+
+
+
+
+class Hospital:
+    def __init__(self, hospital_name):
+        self.hospital_name = hospital_name
+        self.patients = {}  # Key = Patient ID, Value = dict with patient details
+
+    def add_patient(self, patient_id, name, age, disease):
+        if patient_id not in self.patients:
+            self.patients[patient_id] = {
+                "name": name,
+                "age": age,
+                "disease": disease
+            }
+            print(f"Patient {name} (ID: {patient_id}) added successfully.")
+        else:
+            print("Patient ID already exists!")
+
+    def update_patient(self, patient_id, name=None, age=None, disease=None):
+        if patient_id in self.patients:
+            if name:
+                self.patients[patient_id]["name"] = name
+            if age:
+                self.patients[patient_id]["age"] = age
+            if disease:
+                self.patients[patient_id]["disease"] = disease
+            print(f"Patient {patient_id} details updated.")
+        else:
+            print("Patient not found!")
+
+    def remove_patient(self, patient_id):
+        if patient_id in self.patients:
+            removed = self.patients.pop(patient_id)
+            print(f"Patient {removed['name']} (ID: {patient_id}) removed.")
+        else:
+            print("Patient not found!")
+
+    def display_patient(self, patient_id):
+        if patient_id in self.patients:
+            p = self.patients[patient_id]
+            print(f"Patient ID: {patient_id}")
+            print(f"Name: {p['name']}")
+            print(f"Age: {p['age']}")
+            print(f"Disease: {p['disease']}")
+        else:
+            print("Patient not found!")
+
+    def display_all_patients(self):
+        if self.patients:
+            print(f"\n--- {self.hospital_name} Patients ---")
+            for pid, details in self.patients.items():
+                print(f"ID: {pid} | Name: {details['name']} | Age: {details['age']} | Disease: {details['disease']}")
+        else:
+            print("No patients available.")
+
+
+
+
+# Create a hospital
+my_hospital = Hospital("Suraj Hospital")
+
+# Add patients
+my_hospital.add_patient("P001", "Rahul Sharma", 30, "Flu")
+my_hospital.add_patient("P002", "Neha Verma", 25, "Diabetes")
+
+# Update patient details
+my_hospital.update_patient("P002", disease="Hypertension")
+
+# Display specific patient
+my_hospital.display_patient("P001")
+
+# Display all patients
+my_hospital.display_all_patients()
+
+# Remove a patient
+my_hospital.remove_patient("P001")
