@@ -1143,3 +1143,69 @@ my_hospital.display_all_patients()
 
 # Remove a patient
 my_hospital.remove_patient("P001")
+
+
+
+
+
+
+
+# Question 21 — Course Class
+
+# Create a class named:
+
+# Course
+
+# The class should have these attributes:
+
+# course_name
+# instructor
+# students — a list containing student names
+
+
+
+class Course:
+    def __init__(self, course_name, instructor):
+        self.course_name = course_name
+        self.instructor = instructor
+        self.students = []  # start with an empty list
+
+    def add_student(self, student_name):
+        """Add a student to the course"""
+        self.students.append(student_name)
+
+    def remove_student(self, student_name):
+        """Remove a student if they exist"""
+        if student_name in self.students:
+            self.students.remove(student_name)
+        else:
+            print(f"{student_name} is not enrolled in this course.")
+
+    def show_course_info(self):
+        """Display course details"""
+        print(f"Course: {self.course_name}")
+        print(f"Instructor: {self.instructor}")
+        print("Students enrolled:")
+        if self.students:
+            for student in self.students:
+                print(f"- {student}")
+        else:
+            print("No students enrolled yet.")
+
+
+
+
+
+# Create a course instance
+course1 = Course("Data Structures", "Dr. Sharma")
+
+# Add students
+course1.add_student("Suraj")
+course1.add_student("Ananya")
+course1.add_student("Ravi")
+
+# Remove a student
+course1.remove_student("Ravi")
+
+# Show course info
+course1.show_course_info()
