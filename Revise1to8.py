@@ -1209,3 +1209,81 @@ course1.remove_student("Ravi")
 
 # Show course info
 course1.show_course_info()
+
+
+
+
+
+# Question 22 — OnlineStore Class
+
+# Create a class named:
+
+# OnlineStore
+
+# The class should manage products and their prices.
+
+# Requirements
+
+# The class should have:
+
+# store_name
+# products — a dictionary containing product names and prices
+# cart — a list containing products selected by the customer
+
+
+
+class OnlineStore:
+    def __init__(self, store_name):
+        self.store_name = store_name
+        self.products = {}   # Dictionary {product_name: price}
+        self.cart = []       # List of selected product names
+
+    def add_product(self, product_name, price):
+        # Add product to store
+        self.products[product_name] = price
+
+    def display_products(self):
+        print(f"\n--- {self.store_name} Products ---")
+        if not self.products:
+            print("No products available.")
+        else:
+            for product, price in self.products.items():
+                print(f"{product}: ₹{price}")
+
+    def add_to_cart(self, product_name):
+        # Add product to cart if available
+        if product_name in self.products:
+            self.cart.append(product_name)
+            print(f"Added to cart: {product_name}")
+        else:
+            print("Product not found in store.")
+
+    def display_cart(self):
+        print("\n--- Shopping Cart ---")
+        if not self.cart:
+            print("Your cart is empty.")
+        else:
+            for item in self.cart:
+                print(f"{item}: ₹{self.products[item]}")
+
+    def calculate_total(self):
+        total = sum(self.products[item] for item in self.cart)
+        print(f"\nTotal Bill: ₹{total}")
+        return total
+
+
+# --- Example Usage ---
+store = OnlineStore("Tech Bazaar")
+
+store.add_product("Laptop", 55000)
+store.add_product("Mouse", 1200)
+store.add_product("Keyboard", 2500)
+
+store.display_products()
+
+store.add_to_cart("Laptop")
+store.add_to_cart("Mouse")
+store.add_to_cart("Phone")  # not in store
+
+store.display_cart()
+store.calculate_total()
