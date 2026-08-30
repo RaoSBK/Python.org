@@ -130,4 +130,66 @@ print(resturant.cusine_type)
 
 resturant.describe_restaurant()
 resturant.open_restaurant()
-    
+
+
+
+
+# Question 23 — Quiz Class
+
+# Create a class named:
+
+# Quiz
+
+# The class should manage a simple multiple-choice quiz.
+
+# Requirements
+
+# The class should have:
+
+# quiz_name
+# questions — a list of questions
+# score — initially 0
+
+
+class Quiz:
+    def __init__(self, quiz_name):
+        self.quiz_name = quiz_name
+        self.questions = []   # list of (question, options, correct_answer)
+        self.score = 0
+
+    def add_question(self, question, options, correct_answer):
+        """Add a question with multiple-choice options."""
+        self.questions.append({
+            "question": question,
+            "options": options,
+            "answer": correct_answer
+        })
+
+    def take_quiz(self):
+        """Run the quiz and calculate score."""
+        print(f"\n--- {self.quiz_name} ---")
+        for idx, q in enumerate(self.questions, start=1):
+            print(f"\nQ{idx}: {q['question']}")
+            for i, option in enumerate(q['options'], start=1):
+                print(f"{i}. {option}")
+
+            try:
+                choice = int(input("Enter your choice (1-4): "))
+                if q['options'][choice - 1] == q['answer']:
+                    print("✅ Correct!")
+                    self.score += 1
+                else:
+                    print(f"❌ Wrong! Correct answer: {q['answer']}")
+            except (ValueError, IndexError):
+                print("Invalid input! Skipping question.")
+
+        print(f"\nYour final score: {self.score}/{len(self.questions)}")
+
+# Example usage
+quiz = Quiz("Python Basics Quiz")
+quiz.add_question("What is the keyword to define a function in Python?",
+                  ["func", "def", "function", "lambda"], "def")
+quiz.add_question("Which data type is immutable?",
+                  ["List", "Dictionary", "Tuple", "Set"], "Tuple")
+
+quiz.take_quiz()
