@@ -193,3 +193,76 @@ quiz.add_question("Which data type is immutable?",
                   ["List", "Dictionary", "Tuple", "Set"], "Tuple")
 
 quiz.take_quiz()
+
+
+
+
+
+
+# Question 24 — ATM Class
+
+# Create a class named:
+
+# ATM
+
+# The class should simulate a simple ATM machine.
+
+# Requirements
+
+# The class should have these attributes:
+
+# account_holder
+# balance
+# pin
+
+
+
+class ATM:
+    def __init__(self, account_holder, balance, pin):
+        self.account_holder = account_holder
+        self.balance = balance
+        self.pin = pin
+
+    def check_pin(self, entered_pin):
+        return entered_pin == self.pin
+
+    def deposit(self, amount, entered_pin):
+        if self.check_pin(entered_pin):
+            if amount > 0:
+                self.balance += amount
+                print(f"Deposited {amount}. New balance: {self.balance}")
+            else:
+                print("Deposit amount must be positive.")
+        else:
+            print("Invalid PIN!")
+
+    def withdraw(self, amount, entered_pin):
+        if self.check_pin(entered_pin):
+            if 0 < amount <= self.balance:
+                self.balance -= amount
+                print(f"Withdrew {amount}. New balance: {self.balance}")
+            else:
+                print("Invalid withdrawal amount or insufficient funds.")
+        else:
+            print("Invalid PIN!")
+
+    def check_balance(self, entered_pin):
+        if self.check_pin(entered_pin):
+            print(f"Account Holder: {self.account_holder}")
+            print(f"Current Balance: {self.balance}")
+        else:
+            print("Invalid PIN!")
+
+
+
+# Create an ATM account
+atm1 = ATM("Suraj Bhan", 5000, "1234")
+
+# Correct PIN operations
+atm1.check_balance("1234")
+atm1.deposit(2000, "1234")
+atm1.withdraw(1500, "1234")
+atm1.check_balance("1234")
+
+# Wrong PIN attempt
+atm1.withdraw(500, "9999")
