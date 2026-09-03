@@ -1232,58 +1232,129 @@ course1.show_course_info()
 
 
 
-class OnlineStore:
-    def __init__(self, store_name):
-        self.store_name = store_name
-        self.products = {}   # Dictionary {product_name: price}
-        self.cart = []       # List of selected product names
+# class OnlineStore:
+#     def __init__(self, store_name):
+#         self.store_name = store_name
+#         self.products = {}   # Dictionary {product_name: price}
+#         self.cart = []       # List of selected product names
 
-    def add_product(self, product_name, price):
-        # Add product to store
-        self.products[product_name] = price
+#     def add_product(self, product_name, price):
+#         # Add product to store
+#         self.products[product_name] = price
 
-    def display_products(self):
-        print(f"\n--- {self.store_name} Products ---")
-        if not self.products:
-            print("No products available.")
+#     def display_products(self):
+#         print(f"\n--- {self.store_name} Products ---")
+#         if not self.products:
+#             print("No products available.")
+#         else:
+#             for product, price in self.products.items():
+#                 print(f"{product}: ₹{price}")
+
+#     def add_to_cart(self, product_name):
+#         # Add product to cart if available
+#         if product_name in self.products:
+#             self.cart.append(product_name)
+#             print(f"Added to cart: {product_name}")
+#         else:
+#             print("Product not found in store.")
+
+#     def display_cart(self):
+#         print("\n--- Shopping Cart ---")
+#         if not self.cart:
+#             print("Your cart is empty.")
+#         else:
+#             for item in self.cart:
+#                 print(f"{item}: ₹{self.products[item]}")
+
+#     def calculate_total(self):
+#         total = sum(self.products[item] for item in self.cart)
+#         print(f"\nTotal Bill: ₹{total}")
+#         return total
+
+
+# # --- Example Usage ---
+# store = OnlineStore("Tech Bazaar")
+
+# store.add_product("Laptop", 55000)
+# store.add_product("Mouse", 1200)
+# store.add_product("Keyboard", 2500)
+
+# store.display_products()
+
+# store.add_to_cart("Laptop")
+# store.add_to_cart("Mouse")
+# store.add_to_cart("Phone")  # not in store
+
+# store.display_cart()
+# store.calculate_total()
+
+
+
+
+# Question 25 — EmployeeManager Class
+
+# Create a class named:
+
+# EmployeeManager
+
+# The class should manage multiple employees.
+
+# Requirements
+
+# The class should have:
+
+# company_name
+# employees — a dictionary where:
+# Key = Employee ID
+# Value = employee details
+
+
+
+
+class EmployeeManager:
+    def __init__(self, company_name):
+        self.company_name = company_name
+        self.employees = {}  # Dictionary: Key = Employee ID, Value = Employee details
+
+    def add_employee(self, employee_id, employee_details):
+        """Add a new employee to the dictionary."""
+        if employee_id in self.employees:
+            print(f"Employee ID {employee_id} already exists!")
         else:
-            for product, price in self.products.items():
-                print(f"{product}: ₹{price}")
+            self.employees[employee_id] = employee_details
+            print(f"Employee {employee_details['name']} added successfully.")
 
-    def add_to_cart(self, product_name):
-        # Add product to cart if available
-        if product_name in self.products:
-            self.cart.append(product_name)
-            print(f"Added to cart: {product_name}")
+    def remove_employee(self, employee_id):
+        """Remove an employee by ID."""
+        if employee_id in self.employees:
+            removed = self.employees.pop(employee_id)
+            print(f"Employee {removed['name']} removed successfully.")
         else:
-            print("Product not found in store.")
+            print(f"Employee ID {employee_id} not found.")
 
-    def display_cart(self):
-        print("\n--- Shopping Cart ---")
-        if not self.cart:
-            print("Your cart is empty.")
+    def display_all_employees(self):
+        """Display all employees in the company."""
+        print(f"\nCompany: {self.company_name}")
+        print("Employees List:")
+        if not self.employees:
+            print("No employees found.")
         else:
-            for item in self.cart:
-                print(f"{item}: ₹{self.products[item]}")
-
-    def calculate_total(self):
-        total = sum(self.products[item] for item in self.cart)
-        print(f"\nTotal Bill: ₹{total}")
-        return total
+            for emp_id, details in self.employees.items():
+                print(f"ID: {emp_id}, Name: {details['name']}, Salary: {details['salary']}")
 
 
-# --- Example Usage ---
-store = OnlineStore("Tech Bazaar")
+# Example usage
+manager = EmployeeManager("Tech Solutions Pvt Ltd")
 
-store.add_product("Laptop", 55000)
-store.add_product("Mouse", 1200)
-store.add_product("Keyboard", 2500)
+# Adding employees
+manager.add_employee(101, {"name": "Suraj Bhan", "salary": 30000})
+manager.add_employee(102, {"name": "Atharv", "salary": 35000})
 
-store.display_products()
+# Displaying all employees
+manager.display_all_employees()
 
-store.add_to_cart("Laptop")
-store.add_to_cart("Mouse")
-store.add_to_cart("Phone")  # not in store
+# Removing an employee
+manager.remove_employee(101)
 
-store.display_cart()
-store.calculate_total()
+# Displaying after removal
+manager.display_all_employees()
