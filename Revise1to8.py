@@ -1358,3 +1358,85 @@ manager.remove_employee(101)
 
 # Displaying after removal
 manager.display_all_employees()
+
+
+
+
+# Question 26 — Inventory Class
+
+# Create a class named:
+
+# Inventory
+
+# The class should manage products in a store.
+
+# Requirements
+
+# The class should have:
+
+# store_name
+# products — a dictionary where:
+# Key = Product name
+# Value = Quantity
+
+
+
+class Inventory:
+    def __init__(self, store_name):
+        self.store_name = store_name
+        self.products = {}  # Dictionary {product_name: quantity}
+
+    def add_product(self, product_name, quantity):
+        # Add product or update quantity
+        if product_name in self.products:
+            self.products[product_name] += quantity
+        else:
+            self.products[product_name] = quantity
+        print(f"{quantity} units of {product_name} added.")
+
+    def remove_product(self, product_name, quantity):
+        # Remove quantity if product exists
+        if product_name in self.products:
+            if quantity <= self.products[product_name]:
+                self.products[product_name] -= quantity
+                print(f"{quantity} units of {product_name} removed.")
+                if self.products[product_name] == 0:
+                    del self.products[product_name]
+                    print(f"{product_name} is now out of stock.")
+            else:
+                print("Error: Not enough stock available!")
+        else:
+            print("Product not found in inventory.")
+
+    def display_inventory(self):
+        print(f"\n--- {self.store_name} Inventory ---")
+        if not self.products:
+            print("No products in inventory.")
+        else:
+            for product, qty in self.products.items():
+                print(f"{product}: {qty} units")
+
+    def check_stock(self, product_name):
+        # Check availability of a product
+        if product_name in self.products:
+            print(f"{product_name} has {self.products[product_name]} units in stock.")
+            return self.products[product_name]
+        else:
+            print(f"{product_name} is not available in inventory.")
+            return 0
+
+
+# --- Example Usage ---
+store_inventory = Inventory("Tech Bazaar")
+
+store_inventory.add_product("Laptop", 10)
+store_inventory.add_product("Mouse", 25)
+store_inventory.add_product("Keyboard", 15)
+
+store_inventory.display_inventory()
+
+store_inventory.remove_product("Mouse", 5)
+store_inventory.check_stock("Mouse")
+
+store_inventory.remove_product("Laptop", 10)  # removes completely
+store_inventory.display_inventory()
