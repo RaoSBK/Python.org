@@ -1440,3 +1440,38 @@ store_inventory.check_stock("Mouse")
 
 store_inventory.remove_product("Laptop", 10)  # removes completely
 store_inventory.display_inventory()
+
+
+
+
+
+
+# Question 27 — Vehicle Class with Inheritance
+
+# Create a base class named:
+
+# Vehicle
+
+# The class should have:
+
+# brand
+# model
+# year
+
+
+class Vehicle:
+    def __init__(self, brand, model, year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+    def display_info(self):
+        """Show vehicle details."""
+        print(f"Brand : {self.brand}")
+        print(f"Model : {self.model}")
+        print(f"Year  : {self.year}")
+
+
+# Example usage
+my_vehicle = Vehicle("Toyota", "Fortuner", 2024)
+my_vehicle.display_info()
