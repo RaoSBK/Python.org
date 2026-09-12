@@ -1475,3 +1475,80 @@ class Vehicle:
 # Example usage
 my_vehicle = Vehicle("Toyota", "Fortuner", 2024)
 my_vehicle.display_info()
+
+
+
+
+# Question 28 — ShoppingCart with Inheritance
+
+# Create a base class named:
+
+# Product
+
+# The class should have:
+
+# name
+# price
+
+
+
+
+# Base class
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+    
+    def __str__(self):
+        return f"{self.name} - ₹{self.price}"
+
+# Derived class
+class ShoppingCart(Product):
+    def __init__(self, customer_name):
+        self.customer_name = customer_name
+        self.items = []  # list of Product objects
+    
+    def add_item(self, product):
+        self.items.append(product)
+        print(f"Added {product.name} to cart.")
+    
+    def remove_item(self, product_name):
+        for product in self.items:
+            if product.name == product_name:
+                self.items.remove(product)
+                print(f"Removed {product_name} from cart.")
+                return
+        print(f"{product_name} not found in cart.")
+    
+    def total_price(self):
+        return sum(product.price for product in self.items)
+    
+    def show_cart(self):
+        print(f"\nShopping Cart for {self.customer_name}:")
+        if not self.items:
+            print("Cart is empty.")
+        else:
+            for product in self.items:
+                print(product)
+            print(f"Total: ₹{self.total_price()}")
+
+
+# Create products
+p1 = Product("Laptop", 55000)
+p2 = Product("Mouse", 800)
+p3 = Product("Keyboard", 1500)
+
+# Create shopping cart
+cart = ShoppingCart("Suraj")
+
+# Add items
+cart.add_item(p1)
+cart.add_item(p2)
+cart.add_item(p3)
+
+# Show cart
+cart.show_cart()
+
+# Remove an item
+cart.remove_item("Mouse")
+cart.show_cart()
