@@ -1552,3 +1552,88 @@ cart.show_cart()
 # Remove an item
 cart.remove_item("Mouse")
 cart.show_cart()
+
+
+
+
+
+
+# Question 29 — LibraryMember Class
+
+# Create a class named:
+
+# LibraryMember
+
+# The class should have:
+
+# name
+# member_id
+# borrowed_books — a list of books currently borrowed
+
+
+
+class LibraryMember:
+
+    def __init__(self, name, member_id):
+        self.name = name
+        self.member_id = member_id
+        self.borrowed_books = []
+
+    def borrow_book(self, book_name):
+        if len(self.borrowed_books) < 3:
+            self.borrowed_books.append(book_name)
+            print(f"{book_name} borrowed successfully.")
+        else:
+            print("You cannot borrow more than 3 books.")
+
+    def return_book(self, book_name):
+        if book_name in self.borrowed_books:
+            self.borrowed_books.remove(book_name)
+            print(f"{book_name} returned successfully.")
+        else:
+            print("Book not found in borrowed books.")
+
+    def display_books(self):
+        print(f"\nMember: {self.name}")
+        print(f"Member ID: {self.member_id}")
+
+        if len(self.borrowed_books) == 0:
+            print("No books borrowed.")
+        else:
+            print("\nBorrowed Books:")
+            for i, book in enumerate(self.borrowed_books, start=1):
+                print(f"{i}. {book}")
+
+    def book_count(self):
+        return len(self.borrowed_books)
+
+    # Bonus method
+    def has_book(self, book_name):
+        return book_name in self.borrowed_books
+
+
+# Creating an object
+member = LibraryMember("Suraj", 101)
+
+# Borrowing books
+member.borrow_book("Python Crash Course")
+member.borrow_book("Data Structures")
+member.borrow_book("Machine Learning")
+
+# Display borrowed books
+member.display_books()
+
+# Display number of books
+print("\nBooks Borrowed:", member.book_count())
+
+# Return a book
+member.return_book("Data Structures")
+
+# Display books again
+member.display_books()
+
+# Check whether a book is borrowed
+if member.has_book("Python Crash Course"):
+    print("\nPython Crash Course is borrowed.")
+else:
+    print("\nPython Crash Course is not borrowed.")
