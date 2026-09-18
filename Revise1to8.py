@@ -1637,3 +1637,74 @@ if member.has_book("Python Crash Course"):
     print("\nPython Crash Course is borrowed.")
 else:
     print("\nPython Crash Course is not borrowed.")
+
+
+
+
+
+# Question 30 — BankAccount Class with Transaction History
+
+# Create a class named:
+
+# BankAccount
+# Requirements
+
+# The class should have:
+
+# account_holder
+# account_number
+# balance
+# transactions — a list to store all transactions
+
+
+class BankAccount:
+    def __init__(self, account_holder, account_number, balance=0.0):
+        self.account_holder = account_holder
+        self.account_number = account_number
+        self.balance = balance
+        self.transactions = []  # List to store all transactions
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            self.transactions.append(f"Deposited {amount}. Balance: {self.balance}")
+            print(f"Deposited {amount}. New balance: {self.balance}")
+        else:
+            print("Deposit amount must be positive.")
+
+    def withdraw(self, amount):
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+            self.transactions.append(f"Withdrew {amount}. Balance: {self.balance}")
+            print(f"Withdrew {amount}. New balance: {self.balance}")
+        else:
+            print("Invalid withdrawal amount or insufficient funds.")
+
+    def display_info(self):
+        print(f"Account Holder: {self.account_holder}")
+        print(f"Account Number: {self.account_number}")
+        print(f"Balance: {self.balance}")
+
+    def show_transactions(self):
+        print(f"\n--- Transaction History for {self.account_holder} ---")
+        if self.transactions:
+            for t in self.transactions:
+                print(t)
+        else:
+            print("No transactions yet.")
+
+
+
+# Create an account
+account1 = BankAccount("Suraj Bhan", "123456789", 5000)
+
+# Perform operations
+account1.deposit(1500)
+account1.withdraw(2000)
+account1.deposit(1000)
+
+# Display account info
+account1.display_info()
+
+# Show transaction history
+account1.show_transactions()
