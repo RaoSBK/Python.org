@@ -1,4 +1,4 @@
-import dictinories as np
+import numpy as np
 import matplotlib.pyplot as plt
 
 
@@ -63,7 +63,7 @@ fig,ax = plt.subplots(figsize=(10,6))
 
 
 box = ax.boxplot(
-    sections.values(),
+    list(sections.values()),
     patch_artist=True,
     tick_labels=list(sections.keys())
 )
