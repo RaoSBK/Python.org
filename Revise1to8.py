@@ -1708,3 +1708,59 @@ account1.display_info()
 
 # Show transaction history
 account1.show_transactions()
+
+
+
+
+
+# Question 31 — Movie Class
+# Create a class named:
+# Movie
+
+
+# The class should have these attributes:
+# - title
+# - genre
+# - rating
+# - reviews — a list containing ratings given by users
+
+
+
+
+class Movie:
+    def __init__(self, title, genre, rating):
+        self.title = title
+        self.genre = genre
+        self.rating = rating
+        self.reviews = []  # list to store user ratings
+
+    def add_review(self, user_rating):
+        """Add a new user rating to the reviews list."""
+        if 0 <= user_rating <= 10:  # simple validation
+            self.reviews.append(user_rating)
+        else:
+            print("Rating must be between 0 and 10.")
+
+    def average_review(self):
+        """Calculate and return the average of user reviews."""
+        if len(self.reviews) > 0:
+            return sum(self.reviews) / len(self.reviews)
+        else:
+            return "No reviews yet."
+
+    def describe_movie(self):
+        """Print movie details."""
+        print(f"Title: {self.title}")
+        print(f"Genre: {self.genre}")
+        print(f"Rating: {self.rating}/10")
+        print(f"User Reviews: {self.reviews}")
+        print(f"Average User Rating: {self.average_review()}")
+        
+
+# Example usage
+movie1 = Movie("Inception", "Sci-Fi", 8.8)
+movie1.add_review(9)
+movie1.add_review(8)
+movie1.add_review(10)
+
+movie1.describe_movie()
