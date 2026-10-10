@@ -1764,3 +1764,47 @@ movie1.add_review(8)
 movie1.add_review(10)
 
 movie1.describe_movie()
+
+
+
+
+# Question 32 — ExpenseTracker Class
+# Create a class named ExpenseTracker to manage personal expenses.
+# Requirements
+# The class should have these attributes:
+# - owner — name of the person.
+# - expenses — a dictionary containing expense categories and their amounts.
+
+class ExpenseTracker:
+    def __init__(self, owner):
+        self.owner = owner
+        self.expenses = {}  # Dictionary: {category: amount}
+
+    def add_expense(self, category, amount):
+        """Add or update an expense in a category."""
+        if category in self.expenses:
+            self.expenses[category] += amount
+        else:
+            self.expenses[category] = amount
+
+    def get_total_expenses(self):
+        """Return the total of all expenses."""
+        return sum(self.expenses.values())
+
+    def show_expenses(self):
+        """Display all expenses by category."""
+        print(f"Expenses for {self.owner}:")
+        for category, amount in self.expenses.items():
+            print(f"{category}: {amount}")
+        print(f"Total: {self.get_total_expenses()}")
+
+
+
+
+tracker = ExpenseTracker("Suraj")
+
+tracker.add_expense("Food", 500)
+tracker.add_expense("Transport", 200)
+tracker.add_expense("Food", 300)  # Adds to existing category
+
+tracker.show_expenses()
