@@ -1808,3 +1808,95 @@ tracker.add_expense("Transport", 200)
 tracker.add_expense("Food", 300)  # Adds to existing category
 
 tracker.show_expenses()
+
+
+
+
+
+# Question 33 — HospitalAppointment Class
+# Create a class named HospitalAppointment to manage patient appointments.
+# Requirements
+# The class should have these attributes:
+# - hospital_name — name of the hospital.
+# - appointments — a dictionary storing appointment details, where the key is the appointment ID.
+
+
+
+
+class HospitalAppointment:
+    def __init__(self, hospital_name):
+        self.hospital_name = hospital_name
+        self.appointments = {}  # Key = Appointment ID, Value = dict with appointment details
+
+    def add_appointment(self, appointment_id, patient_name, doctor_name, date, time):
+        if appointment_id not in self.appointments:
+            self.appointments[appointment_id] = {
+                "patient_name": patient_name,
+                "doctor_name": doctor_name,
+                "date": date,
+                "time": time
+            }
+            print(f"Appointment {appointment_id} added successfully.")
+        else:
+            print("Appointment ID already exists!")
+
+    def update_appointment(self, appointment_id, patient_name=None, doctor_name=None, date=None, time=None):
+        if appointment_id in self.appointments:
+            if patient_name:
+                self.appointments[appointment_id]["patient_name"] = patient_name
+            if doctor_name:
+                self.appointments[appointment_id]["doctor_name"] = doctor_name
+            if date:
+                self.appointments[appointment_id]["date"] = date
+            if time:
+                self.appointments[appointment_id]["time"] = time
+            print(f"Appointment {appointment_id} updated successfully.")
+        else:
+            print("Appointment not found!")
+
+    def cancel_appointment(self, appointment_id):
+        if appointment_id in self.appointments:
+            removed = self.appointments.pop(appointment_id)
+            print(f"Appointment {appointment_id} for patient {removed['patient_name']} cancelled.")
+        else:
+            print("Appointment not found!")
+
+    def view_appointment(self, appointment_id):
+        if appointment_id in self.appointments:
+            appt = self.appointments[appointment_id]
+            print(f"\n--- Appointment {appointment_id} ---")
+            print(f"Patient: {appt['patient_name']}")
+            print(f"Doctor: {appt['doctor_name']}")
+            print(f"Date: {appt['date']}")
+            print(f"Time: {appt['time']}")
+        else:
+            print("Appointment not found!")
+
+    def view_all_appointments(self):
+        if self.appointments:
+            print(f"\n--- {self.hospital_name} Appointments ---")
+            for aid, details in self.appointments.items():
+                print(f"ID: {aid} | Patient: {details['patient_name']} | Doctor: {details['doctor_name']} | Date: {details['date']} | Time: {details['time']}")
+        else:
+            print("No appointments scheduled.")
+
+
+
+# Create hospital appointment system
+hospital = HospitalAppointment("Suraj Hospital")
+
+# Add appointments
+hospital.add_appointment("A001", "Rahul Sharma", "Dr. Mehta", "2026-10-12", "10:00 AM")
+hospital.add_appointment("A002", "Neha Verma", "Dr. Singh", "2026-10-13", "2:00 PM")
+
+# Update appointment
+hospital.update_appointment("A002", time="3:00 PM")
+
+# View specific appointment
+hospital.view_appointment("A001")
+
+# View all appointments
+hospital.view_all_appointments()
+
+# Cancel appointment
+hospital.cancel_appointment("A001")
